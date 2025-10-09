@@ -9,5 +9,7 @@
 }
 
 @layer components {
-  .nav-link { @apply text-gray-700 hover:text-violet-dark transition-colors; }
+  .nav-link {
+    @apply text-gray-700 hover:text-violet-dark transition-colors;
+  }
 }

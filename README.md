@@ -1,48 +1,56 @@
-# Astro Starter Kit: Basics
+# Vio-lettres
 
-```sh
-npm create astro@latest -- --template basics
+Site vitrine statique généré avec Eleventy + Tailwind CSS (Astro n'est finalement pas utilisé pour la génération actuelle).
+
+## Structure
+
+- `src/` : sources Nunjucks/Eleventy
+- `_site/` : sortie de build générée par Eleventy (`npm run build`)
+- `src/styles/tailwind.css` → compilé en `_site/css/styles.css`
+
+## Développement
+
+```bash
+npm install
+npm start   # lance eleventy + watch tailwind
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Build
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run build
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Déploiement GitHub Pages
 
-## 🧞 Commands
+Un workflow GitHub Actions (`.github/workflows/deploy.yml`) build automatiquement et publie le dossier `_site`.
 
-All commands are run from the root of the project, from a terminal:
+Déclencheurs:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- Push sur `main`
+- Lancement manuel (workflow_dispatch)
 
-## 👀 Want to learn more?
+### Activer Pages (si pas déjà fait)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Aller dans Settings > Pages
+2. Source: "GitHub Actions" (automatique après premier run réussi)
+
+### Domaine personnalisé (optionnel)
+
+Créer un fichier `CNAME` dans `public/` ou à la racine avant build contenant votre domaine (ex: `violette.pogodev.com`). Ajouter aussi ce domaine dans Settings > Pages > Custom domain.
+
+## Scripts npm
+
+| Script | Action |
+| ------ | ------ |
+| `start` | lance `eleventy --serve` + compilation tailwind en watch |
+| `build` | génère le site statique + CSS |
+
+## Contenu
+
+Les sections (Qui suis-je, Services, Tarifs, etc.) sont gérées dans les templates Nunjucks sous `src/`.
+
+---
+Ancienne documentation Astro conservée ci-dessous si besoin.
+
+<!-- ...existing code... -->
