@@ -41,16 +41,17 @@ Créer un fichier `CNAME` dans `public/` ou à la racine avant build contenant v
 
 ## Scripts npm
 
-| Script | Action |
-| ------ | ------ |
+| Script  | Action                                                   |
+| ------- | -------------------------------------------------------- |
 | `start` | lance `eleventy --serve` + compilation tailwind en watch |
-| `build` | génère le site statique + CSS |
+| `build` | génère le site statique + CSS                            |
 
 ## Contenu
 
 Les sections (Qui suis-je, Services, Tarifs, etc.) sont gérées dans les templates Nunjucks sous `src/`.
 
 ---
+
 Ancienne documentation Astro conservée ci-dessous si besoin.
 
 <!-- ...existing code... -->
