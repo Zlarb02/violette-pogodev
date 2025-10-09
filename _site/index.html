@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Violette Pogoda | Correctrice Freelance</title>
-    <meta name="description" content="Correctrice freelance certifiée Le Robert. Services de correction, relecture et révision de manuscrits pour maisons d'édition et auteurs.">
+    
+    <title>Accueil - Vio-lettres | Correction &amp; Relecture professionnelles</title>
+    <meta name="description" content="Correction de manuscrits et épreuves : orthographe, typographie, cohérence, fact-checking. Spécialité mangas, webtoons, romans, comics. Certifiée Le Robert niveau expert.">
+    <meta property="og:title" content="Accueil - Vio-lettres | Correction &amp; Relecture professionnelles">
+    <meta property="og:description" content="Correction professionnelle de manuscrits et épreuves. Mangas, webtoons, romans, comics, artbooks, BD, essais.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://violette.pogodev.com/">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,94 +18,176 @@
 </head>
 <body class="bg-cream text-gray-900 font-sans">
     <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
-    <div class="container mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-4">
         <nav class="flex items-center justify-between h-16">
-            <a href="/" class="font-serif text-violet-dark text-xl">VP</a>
-            <ul class="flex space-x-8">
-                <li><a href="/#about" class="text-gray-700 hover:text-violet-dark transition-colors">À propos</a></li>
-                <li><a href="/#services" class="text-gray-700 hover:text-violet-dark transition-colors">Services</a></li>
-                <li><a href="/#contact" class="text-gray-700 hover:text-violet-dark transition-colors">Contact</a></li>
+            <a href="/" class="font-serif text-violet-dark text-xl font-bold tracking-wide">Vio<span class="text-violet">-</span>lettres</a>
+            <ul class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <li><a href="/#qui-suis-je" class="nav-link">Qui suis-je</a></li>
+                <li><a href="/#services" class="nav-link">Services</a></li>
+                <li><a href="/#tarifs" class="nav-link">Tarifs</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="/#contact" class="hidden md:inline-block bg-violet text-white px-4 py-2 rounded-lg hover:bg-violet-dark transition-colors text-sm font-medium shadow-sm">Demander un devis</a>
+        </nav>
+    </div>
+    <div class="md:hidden border-t border-violet/10 bg-white/95 backdrop-blur-sm">
+        <nav class="max-w-7xl mx-auto px-4 py-3">
+            <ul class="grid grid-cols-2 gap-4 text-sm font-medium">
+                <li><a href="/#qui-suis-je" class="nav-link block">Qui suis-je</a></li>
+                <li><a href="/#services" class="nav-link block">Services</a></li>
+                <li><a href="/#tarifs" class="nav-link block">Tarifs</a></li>
+                <li><a href="/#contact" class="nav-link block">Contact</a></li>
             </ul>
         </nav>
     </div>
 </header>
+
+<style>
+    .nav-link { @apply text-gray-700 hover:text-violet-dark transition-colors; }
+</style>
     
     <main>
         
-<section class="min-h-screen flex items-center justify-center bg-cream">
-    <div class="container mx-auto px-4 py-16">
-        <div class="max-w-3xl mx-auto text-center">
-            <h1 class="font-serif text-5xl md:text-6xl mb-6 text-violet-dark">
-                Violette Pogoda
-                <span class="block text-2xl md:text-3xl mt-4 text-violet">Correctrice Freelance</span>
+<!-- Hero -->
+<section class="pt-28 pb-24 bg-gradient-to-b from-violet-light/40 to-cream relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none opacity-40" aria-hidden="true"></div>
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center">
+            <h1 class="font-serif text-4xl md:text-6xl leading-tight mb-6 text-violet-dark">
+                Vio-lettres
+                <span class="block text-xl md:text-2xl font-sans font-medium mt-4 tracking-wide text-violet">Correction professionnelle & relecture experte</span>
             </h1>
-            <p class="text-lg md:text-xl mb-8 text-gray-700">
-                Certifiée Le Robert niveau expert, je mets mon expertise au service de vos textes
+            <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-700 mb-10">
+                Manuscrits, épreuves, bulles et dialogues : chaque détail compte. J'affine vos textes pour qu'ils rencontrent leurs lecteurs dans leur meilleure version.
             </p>
-            <a href="#contact" class="inline-block bg-violet hover:bg-violet-dark text-white font-medium px-8 py-3 rounded-lg transition-colors">
-                Discutons de votre projet !
-            </a>
-        </div>
-    </div>
-</section>
-
-<section id="about" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-serif text-center mb-12 text-violet-dark">À propos</h2>
-        <div class="max-w-2xl mx-auto">
-            <p class="text-lg mb-6">
-                Forte d'une expérience en tant qu'assistante d'édition chez Mana Books et HATIER, 
-                et diplômée en édition de l'Université Paris Nanterre et Paris-Sorbonne, 
-                je mets aujourd'hui mon expertise au service de vos projets éditoriaux.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section id="services" class="py-16 bg-violet-light">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-serif text-center mb-12 text-violet-dark">Services</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-serif mb-4 text-violet-dark">Correction orthographique</h3>
-                <p class="text-gray-700">Élimination des erreurs d'orthographe, de grammaire et de syntaxe.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-serif mb-4 text-violet-dark">Correction typographique</h3>
-                <p class="text-gray-700">Respect des règles typographiques et mise en forme professionnelle.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-xl font-serif mb-4 text-violet-dark">Révision de manuscrits</h3>
-                <p class="text-gray-700">Accompagnement éditorial complet pour votre projet d'écriture.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="inline-block bg-violet hover:bg-violet-dark text-white font-medium px-8 py-3 rounded-lg transition-colors shadow">
+                    Demander un devis
+                </a>
+                <a href="#qui-suis-je" class="inline-block bg-white hover:bg-violet-light text-violet-dark border border-violet/30 font-medium px-8 py-3 rounded-lg transition-colors shadow-sm">
+                    En savoir plus
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
+<!-- Qui suis-je / Parcours -->
+<section id="qui-suis-je" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-serif mb-6 text-violet-dark">Qui suis-je ?</h2>
+                <h3 class="text-xl font-semibold mb-4 text-violet-dark/80">Mon parcours</h3>
+                <div class="prose max-w-none text-gray-700 space-y-4">
+                    <p>Correctrice indépendante depuis <strong>novembre 2024</strong>, j’ai déjà eu le plaisir de travailler avec <strong>Mana Books, Manga Nova, Ki-oon, Kbooks</strong> et <strong>Kana</strong>, et je souhaite aujourd’hui élargir mes horizons.</p>
+                    <p>J’ai terminé la formation de lecteur-correcteur de <strong>l’EFLC</strong> en avril 2024 et je suis certifiée <strong>Le Robert (niveau expert)</strong>.</p>
+                    <p>Cela vient compléter plus de dix ans d’expérience comme assistante éditoriale : d’abord dans le secteur scolaire chez Nathan et Hatier, puis six ans chez Mana Books, avec des projets variés allant des mangas aux romans, en passant par les comics, webtoons, artbooks et livres de cuisine.</p>
+                    <p>Avant Mana Books, j’ai effectué un premier tri des manuscrits reçus par Le Bélial’ pendant près d’un an, et j’ai rédigé quelques fiches de lecture pour Albin Michel Imaginaire.</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-violet-dark/80">Mes atouts</h3>
+                <ul class="space-y-5">
+                    <li class="flex items-start gap-3"><span class="mt-1 w-2.5 h-2.5 rounded-full bg-violet"></span><p class="text-gray-700">Ma connaissance des règles de la langue française et de la typographie ainsi que mon regard entraîné à la relecture me permettent de repérer rapidement les fautes et les incohérences.</p></li>
+                    <li class="flex items-start gap-3"><span class="mt-1 w-2.5 h-2.5 rounded-full bg-violet"></span><p class="text-gray-700">Je pratique le <strong>doute actif</strong> : je me demande le plus souvent possible si tel mot est bien orthographié, si telle phrase est bien construite, ou si telle information est correcte.</p></li>
+                    <li class="flex items-start gap-3"><span class="mt-1 w-2.5 h-2.5 rounded-full bg-violet"></span><p class="text-gray-700">De mon expérience d’assistante éditoriale, j’ai gardé trois forces : comprendre les attentes des éditeurs, travailler avec rigueur et organisation, et enrichir ma pratique grâce à la collaboration avec d’autres correcteurs.</p></li>
+                    <li class="flex items-start gap-3"><span class="mt-1 w-2.5 h-2.5 rounded-full bg-violet"></span><p class="text-gray-700">Passionnée par l’imaginaire sous toutes ses formes – livres, jeux vidéo, films, séries – je veille à la cohérence interne des œuvres que je relis, et à celle de l’univers global lorsque le texte appartient à un monde étendu.</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-20 bg-violet-light/40">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-serif text-center mb-14 text-violet-dark">Services proposés</h2>
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+            <div>
+                <h3 class="text-2xl font-serif mb-6 text-violet-dark/90">Pour qui ?</h3>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-violet"></span><p>Auteurs qui souhaitent faire corriger leur manuscrit avant publication (en autoédition ou avant envoi aux éditeurs)</p></li>
+                    <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-violet"></span><p>Maisons d’édition (romans, mangas, webtoons, comics, artbooks, BD, livres de cuisine, essais, scolaire et parascolaire)</p></li>
+                    <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-violet"></span><p>Agences de correction</p></li>
+                    <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-violet"></span><p>Plateformes d’autoédition</p></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-2xl font-serif mb-6 text-violet-dark/90">Quelles prestations ?</h3>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-violet"></span><p><strong>Correction de manuscrit (Word)</strong> : orthographe, typographie, grammaire, conjugaison, syntaxe, cohérence, vérification factuelle et détection des répétitions</p></li>
+                    <li class="flex gap-3"><span class="mt-2 w-2 h-2 rounded-full bg-violet"></span><p><strong>Correction d’épreuves (PDF ou InDesign)</strong> : même chose que pour la correction d’un manuscrit + vérification du lettrage / de la maquette</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tarifs -->
+<section id="tarifs" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-serif text-center mb-14 text-violet-dark">Tarifs</h2>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="p-6 rounded-xl border border-violet/20 bg-violet-light/30 backdrop-blur-sm shadow-sm">
+                <h3 class="text-xl font-serif mb-4 text-violet-dark">Mangas, webtoons, comics</h3>
+                <p class="text-4xl font-bold text-violet-dark mb-2">140 €<span class="text-base font-medium text-gray-600"> / volume</span></p>
+                <p class="text-sm text-gray-600">(Un supplément peut être demandé en cas de pagination exceptionnellement élevée.)</p>
+            </div>
+            <div class="p-6 rounded-xl border border-violet/20 bg-white shadow-sm">
+                <h3 class="text-xl font-serif mb-4 text-violet-dark">Autres livres</h3>
+                <p class="text-4xl font-bold text-violet-dark mb-2">2,50 €<span class="text-base font-medium text-gray-600"> / 1000 signes</span></p>
+                <p class="text-sm text-gray-600">Tarif adapté selon la complexité et le délai. Devis personnalisé sur demande.</p>
+            </div>
+        </div>
+        <div class="mt-10 text-center">
+            <a href="#contact" class="inline-block bg-violet hover:bg-violet-dark text-white font-medium px-8 py-3 rounded-lg transition-colors shadow">Obtenir un devis</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-24 bg-gradient-to-b from-violet-light/30 to-cream relative">
+    <div class="max-w-4xl mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-serif text-center mb-12 text-violet-dark">Contact</h2>
-        <div class="max-w-xl mx-auto">
-            <form class="space-y-6">
-                <div>
-                    <label for="name" class="block text-gray-700 mb-2">Nom</label>
-                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-violet focus:border-violet">
-                </div>
-                <div>
-                    <label for="email" class="block text-gray-700 mb-2">Email</label>
-                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-violet focus:border-violet">
-                </div>
-                <div>
-                    <label for="message" class="block text-gray-700 mb-2">Message</label>
-                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-violet focus:border-violet"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-violet hover:bg-violet-dark text-white font-medium px-8 py-3 rounded-lg transition-colors">
-                    Envoyer
+        <p class="text-center max-w-2xl mx-auto text-gray-700 mb-10">Un projet, un manuscrit, une série de tomes ou des épreuves à rendre rapidement ? Parlons-en.</p>
+        <form name="contact" method="POST" data-netlify="true" class="grid gap-6 md:grid-cols-2 bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-violet/10">
+            <input type="hidden" name="form-name" value="contact" />
+            <div class="md:col-span-1">
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom *</label>
+                <input required type="text" id="name" name="name" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet focus:border-violet outline-none bg-white/70" />
+            </div>
+            <div class="md:col-span-1">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                <input required type="email" id="email" name="email" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet focus:border-violet outline-none bg-white/70" />
+            </div>
+            <div class="md:col-span-2">
+                <label for="type" class="block text-sm font-medium text-gray-700 mb-1">Type de projet</label>
+                <select id="type" name="type" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet focus:border-violet outline-none bg-white/70">
+                    <option>Manuscrit</option>
+                    <option>Épreuves PDF</option>
+                    <option>Épreuves InDesign</option>
+                    <option>Manga / Webtoon / Comics</option>
+                    <option>Autre</option>
+                </select>
+            </div>
+            <div class="md:col-span-2">
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+                <textarea required id="message" name="message" rows="5" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-violet focus:border-violet outline-none bg-white/70"></textarea>
+            </div>
+            <div class="md:col-span-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-gray-500">Je réponds généralement sous 24h ouvrées.</p>
+                <button type="submit" class="inline-flex justify-center bg-violet hover:bg-violet-dark text-white font-medium px-8 py-3 rounded-lg transition-colors shadow">
+                    Envoyer la demande
                 </button>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </section>
+
+<style>
+    .prose p { @apply leading-relaxed; }
+</style>
     </main>
 
     <footer class="bg-violet-dark text-white py-8">

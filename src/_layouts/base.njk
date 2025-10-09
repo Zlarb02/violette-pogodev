@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if title %}{{ title }} - {% endif %}Violette Pogoda | Correctrice Freelance</title>
-    <meta name="description" content="Correctrice freelance certifiée Le Robert. Services de correction, relecture et révision de manuscrits pour maisons d'édition et auteurs.">
+    {% set fullTitle = (title + ' - ' if title) + 'Vio-lettres | Correction & Relecture professionnelles' %}
+    <title>{{ fullTitle }}</title>
+    <meta name="description" content="Correction de manuscrits et épreuves : orthographe, typographie, cohérence, fact-checking. Spécialité mangas, webtoons, romans, comics. Certifiée Le Robert niveau expert.">
+    <meta property="og:title" content="{{ fullTitle }}">
+    <meta property="og:description" content="Correction professionnelle de manuscrits et épreuves. Mangas, webtoons, romans, comics, artbooks, BD, essais.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://violette.pogodev.com/">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
