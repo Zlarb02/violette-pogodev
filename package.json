@@ -19,7 +19,6 @@
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
-    "astro": "^5.14.3",
     "typescript": "^5.9.3"
   }
 }
