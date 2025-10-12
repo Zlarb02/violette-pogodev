@@ -2,111 +2,93 @@
 layout: base.njk
 title: Accueil
 ---
-
-<!-- H                    <img src="/public/photodeprofil.jpeg" alt="Portrait de Violette Pogoda" 
-                         class="absolute h-52 w-auto object-cover top-1/2 left-1/2 md:h-64" 
-                         style="transform: translateX(-49%) translateY(-43%);" 
-                         loading="lazy" />-->
-<section class="min-h-screen flex items-center pt-20 pb-16 bg-gradient-to-br from-violet-light/30 via-cream/50 to-violet-light/20 relative overflow-hidden">
-    <!-- Image bibliothèque en fond -->
-    <img src="/public/bibliotheque.jpeg" alt="Rayonnages de bibliothèque" class="absolute inset-0 w-full h-full object-cover opacity-65 mix-blend-multiply pointer-events-none scale-x-[-1]" loading="lazy" />
-    <div class="absolute inset-0 bg-gradient-to-r from-white/98 via-white/98 via-white/50 via-transparent to-transparent" style="background: linear-gradient(to right, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.98) 33%, rgba(255,255,255,0.5) 50%, transparent 66%, transparent 100%);"></div>
+<section class="min-h-screen flex items-center pt-20 pb-8 bg-gradient-to-br from-violet-light/30 via-cream/50 to-violet-light/20 relative overflow-hidden">
+    <!-- Image bibliothèque en fond - masquée sur mobile pour plus de clarté -->
+    <img src="/public/bibliotheque.jpeg" alt="Rayonnages de bibliothèque" class="hidden lg:block absolute inset-0 w-full h-full object-cover opacity-65 mix-blend-multiply pointer-events-none scale-x-[-1]" loading="lazy" />
+    <div class="hidden lg:block absolute inset-0 bg-gradient-to-r from-white/98 via-white/98 via-white/50 via-transparent to-transparent" style="background: linear-gradient(to right, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.98) 33%, rgba(255,255,255,0.5) 50%, transparent 66%, transparent 100%);"></div>
     
-    <div class="relative max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Colonne gauche : Logo et texte -->
-        <div class="text-center lg:text-left space-y-6">
-            <div class="flex justify-center lg:justify-start">
-                <img src="/public/logo.png" alt="Logo Vio-lettres" class="h-24 md:h-32 w-auto object-contain drop-shadow-lg" />
-            </div>
-            
-            <div class="space-y-3">
-                <p class="text-violet font-semibold tracking-wide text-lg">Violette Pogoda</p>
-                <p class="text-violet-dark/80 font-medium">Correctrice indépendante</p>
-            </div>
-            
-            <h1 class="font-serif text-2xl md:text-3xl lg:text-4xl leading-relaxed text-violet-dark max-w-2xl mx-auto lg:mx-0">
-                Bienvenue chez <span class="text-violet font-semibold">Vio-lettres</span> !
-            </h1>
-            
-            <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Là où manuscrits et épreuves sont peaufinés, caractère après caractère, bulle après bulle, pour se métamorphoser en livres prêts à rencontrer leurs lecteurs.
-            </p>
-            
-            <div class="pt-6 flex flex-col sm:flex-row gap-4">
-                <a href="#services" class="group relative inline-flex items-center gap-3 bg-gradient-to-r from-violet/5 via-white/80 to-violet/5 backdrop-blur-sm text-violet-dark font-medium px-8 py-4 rounded-2xl transition-all duration-500 shadow-lg hover:shadow-xl border border-violet/10 hover:border-violet/30 overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-r from-violet/0 via-violet/5 to-violet/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative flex items-center gap-3">
-                        <div class="p-2 bg-violet/10 rounded-full group-hover:bg-violet/20 transition-colors duration-300">
-                            <i data-lucide="briefcase" class="w-4 h-4 text-violet group-hover:scale-110 transition-transform duration-300"></i>
-                        </div>
-                        <span class="group-hover:translate-x-1 transition-transform duration-300">Services</span>
-                    </div>
-                </a>
-                <a href="#tarifs" class="group relative inline-flex items-center gap-3 bg-gradient-to-r from-violet/5 via-white/80 to-violet/5 backdrop-blur-sm text-violet-dark font-medium px-8 py-4 rounded-2xl transition-all duration-500 shadow-lg hover:shadow-xl border border-violet/10 hover:border-violet/30 overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-r from-violet/0 via-violet/5 to-violet/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div class="relative flex items-center gap-3">
-                        <div class="p-2 bg-violet/10 rounded-full group-hover:bg-violet/20 transition-colors duration-300">
-                            <i data-lucide="euro" class="w-4 h-4 text-violet group-hover:scale-110 transition-transform duration-300"></i>
-                        </div>
-                        <span class="group-hover:translate-x-1 transition-transform duration-300">Tarifs</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-        
-        <!-- Colonne droite : Photo de profil -->
-        <div class="flex justify-center lg:justify-end items-start">
-            <div class="relative -mt-8 md:-mt-12">
-                <!-- Éclairage doux plus subtil -->
-                <div class="absolute -inset-6 bg-gradient-radial from-amber-100/25 via-amber-50/15 to-transparent rounded-full blur-xl"></div>
-                <div class="absolute -inset-3 bg-gradient-radial from-yellow-50/30 to-transparent rounded-full blur-lg"></div>
-                
-                <!-- Cadre bibliothèque raffiné -->
-                <div class="relative bg-gradient-to-br from-amber-50/70 via-cream/50 to-amber-100/60 p-2.5 rounded-2xl shadow-xl backdrop-blur-sm border border-amber-100/40">
-                    <!-- Effet parchemin ancien plus discret -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-amber-900/3 via-transparent to-amber-800/5 rounded-2xl"></div>
-                    
-                    <div class="relative w-40 h-44 md:w-48 md:h-52 rounded-xl overflow-hidden shadow-inner">
-                        <img src="/public/photodeprofil.jpeg" alt="Portrait de Violette Pogoda" 
-                             class="w-full h-full object-cover object-top" 
-                             loading="lazy" />
+    <!-- Fond simplifié pour mobile -->
+    <div class="lg:hidden absolute inset-0 bg-gradient-to-b from-white via-violet-light/10 to-violet-light/20"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4">
+        <!-- Layout mobile: tout centré et empilé -->
+        <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+            <!-- Section principale mobile/desktop -->
+            <div class="hero-content text-center lg:text-left space-y-6 lg:space-y-8 mb-8 lg:mb-0">
+                <!-- Logo et titre principal -->
+                <div class="space-y-4">
+                    <div class="flex justify-center lg:justify-start">
+                        <img src="/public/logo.png" alt="Logo Vio-lettres" class="h-20 sm:h-24 lg:h-32 w-auto object-contain drop-shadow-lg" />
                     </div>
                     
-                    <!-- Reflets plus naturels -->
-                    <div class="absolute inset-2.5 rounded-xl bg-gradient-to-br from-white/15 via-transparent to-amber-200/5 pointer-events-none"></div>
+                    <h1 class="hero-title font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight text-violet-dark max-w-3xl mx-auto lg:mx-0">
+                        Bienvenue chez <span class="text-violet font-bold bg-violet/5 px-2 py-1 rounded-lg">Vio-lettres</span> !
+                    </h1>
+                    
+                    <p class="text-gray-700 text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
+                        Là où manuscrits et épreuves sont peaufinés, caractère après caractère, bulle après bulle, pour se métamorphoser en livres prêts à rencontrer leurs lecteurs.
+                    </p>
                 </div>
-                
-                <!-- Bouton Qui suis-je sous la photo -->
-                <div class="mt-6 flex justify-center relative z-10">
-                    <a href="#qui-suis-je" class="group relative inline-flex items-center gap-3 bg-gradient-to-r from-violet/5 via-white/80 to-violet/5 backdrop-blur-sm text-violet-dark font-medium px-8 py-4 rounded-2xl transition-all duration-500 shadow-lg hover:shadow-xl border border-violet/10 hover:border-violet/30 overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-r from-violet/0 via-violet/5 to-violet/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="relative flex items-center gap-3">
-                            <div class="p-2 bg-violet/10 rounded-full group-hover:bg-violet/20 transition-colors duration-300">
-                                <i data-lucide="user" class="w-5 h-5 text-violet group-hover:scale-110 transition-transform duration-300"></i>
+            
+                <!-- Boutons d'action -->
+                <div class="hero-buttons space-y-4 sm:space-y-0 sm:flex sm:gap-4 sm:justify-center lg:justify-start">
+                    <a href="#services" class="group relative inline-flex items-center justify-center gap-3 bg-violet text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:bg-violet-dark transform hover:-translate-y-1 w-full sm:w-auto">
+                        <span>Découvrir mes services</span>
+                    </a>
+                    <a href="#contact" class="group relative inline-flex items-center justify-center gap-3 bg-white text-violet-dark font-semibold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-violet/20 hover:border-violet/40 transform hover:-translate-y-1 w-full sm:w-auto">
+                        <i data-lucide="send" class="w-5 h-5 group-hover:scale-110 transition-transform duration-300"></i>
+                        <span>Me contacter</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Photo de profil interactive - repositionnée pour mobile -->
+            <div class="hero-photo flex justify-center lg:justify-end">
+                <div class="relative mt-8 lg:mt-0 lg:-mt-12">
+                    <!-- Éclairage doux -->
+                    <div class="absolute -inset-4 bg-gradient-radial from-violet/5 via-violet/2 to-transparent rounded-full blur-2xl"></div>
+                    
+                    <!-- Cadre interactif avec overlay -->
+                    <a href="#qui-suis-je" class="group relative block bg-white/90 backdrop-blur-sm p-3 rounded-3xl shadow-2xl border border-violet/10 transition-all duration-300 hover:shadow-3xl hover:scale-105">
+                        <div class="relative w-48 h-56 sm:w-56 sm:h-64 lg:w-64 lg:h-72 rounded-2xl overflow-hidden">
+                            <!-- Photo de base -->
+                            <img src="/public/photodeprofil.jpeg" alt="Portrait de Violette Pogoda" 
+                                 class="w-full h-full object-cover object-top transition-all duration-500 group-hover:brightness-50" 
+                                 loading="lazy" />
+                            
+                            <!-- Overlay "Qui suis-je ?" qui apparaît au hover -->
+                            <div class="absolute inset-0 bg-violet flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                                <div class="text-center text-white p-6">
+                                    <div class="mb-4">
+                                        <i data-lucide="user" class="w-12 h-12 mx-auto mb-3 transform scale-75 group-hover:scale-100 transition-transform duration-500"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-100">Qui suis-je ?</h3>
+                                    <p class="text-sm opacity-90 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500 delay-200">Découvrez mon parcours et mes atouts</p>
+                                    <div class="mt-4 w-8 h-0.5 bg-white/50 mx-auto transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-300"></div>
+                                </div>
                             </div>
-                            <span class="group-hover:translate-x-1 transition-transform duration-300">Qui suis-je ?</span>
                         </div>
                     </a>
                 </div>
-
             </div>
         </div>
+    </div>
     </div>
 </section>
 
 <!-- Qui suis-je / Parcours -->
-<section id="qui-suis-je" class="py-24 bg-gradient-to-b from-white to-violet-light/20">
+<section id="qui-suis-je" class="py-16 lg:py-24 bg-gradient-to-b from-white to-violet-light/20">
     <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-serif text-violet-dark mb-4">Qui suis-je ?</h2>
+        <div class="text-center mb-12 lg:mb-16">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-violet-dark mb-4">Qui suis-je ?</h2>
             <div class="w-24 h-1 bg-violet mx-auto rounded-full"></div>
         </div>
         
         <!-- Livre ouvert : Mon parcours / Mes atouts -->
         <div class="flex justify-center">
-            <div class="flex w-[800px] h-[600px] relative">
+            <div class="flex flex-col lg:flex-row w-full max-w-5xl lg:h-[700px] relative">
                 <!-- Page gauche : Mon parcours -->
-                <div class="w-[400px] h-[600px] bg-white rounded-l-3xl p-8 shadow-xl border border-r-0 border-violet/10 relative transform -rotate-1 hover:rotate-0 transition-transform duration-300 overflow-hidden">
+                <div class="w-full lg:w-1/2 min-h-[500px] lg:h-[700px] bg-white rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none p-6 lg:p-10 shadow-xl border border-b-0 lg:border-b lg:border-r-0 border-violet/10 relative transform lg:-rotate-1 hover:rotate-0 transition-transform duration-300 overflow-auto">
                     <!-- Effet de reliure sur le bord droit -->
                     <div class="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-r from-transparent via-violet/5 to-violet/10 pointer-events-none"></div>
                     <div class="absolute right-1 top-4 bottom-4 w-px bg-violet/20"></div>
@@ -118,28 +100,28 @@ title: Accueil
                         </div>
                         Mon parcours
                     </h3>
-                    <div class="space-y-4 text-gray-700 leading-relaxed pr-6">
+                    <div class="space-y-4 text-gray-700 leading-relaxed lg:pr-6">
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p>Correctrice indépendante depuis novembre 2024, j'ai déjà eu le plaisir de travailler avec Mana Books, Manga Nova, Ki-oon, Kbooks et Kana, et je souhaite aujourd'hui élargir mes horizons.</p>
+                            <p><strong class="text-violet-dark">Correctrice indépendante</strong> depuis novembre 2024, j'ai déjà eu le plaisir de travailler avec Mana Books, Manga Nova, Ki-oon, Kbooks et Kana, et je souhaite aujourd'hui élargir mes horizons.</p>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p>J'ai terminé la formation de lecteur-correcteur de l'EFLC en avril 2024 et je suis certifiée Le Robert (niveau expert).</p>
+                            <p>J'ai terminé la <strong class="text-violet-dark">formation de lecteur-correcteur</strong> de l'EFLC en avril 2024 et je suis certifiée Le Robert (niveau expert).</p>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p>Plus de dix ans d'expérience comme assistante éditoriale : d'abord dans le secteur scolaire chez Nathan et Hatier, puis six ans chez Mana Books, sur des projets variés (mangas, romans, comics, webtoons, artbooks, livres de cuisine).</p>
+                            <p>Cela vient compléter plus de dix ans d'expérience comme <strong class="text-violet-dark">assistante éditoriale</strong> : d'abord dans le secteur scolaire chez Nathan et Hatier, puis six ans chez Mana Books, avec des projets variés allant des mangas aux romans, en passant par les comics, webtoons, artbooks et livres de cuisine.</p>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p>Avant Mana Books : tri des manuscrits reçus par Le Bélial' pendant près d'un an et rédaction de fiches de lecture pour Albin Michel Imaginaire.</p>
+                            <p>Avant Mana Books, j'ai effectué des travaux de <strong class="text-violet-dark">lectrice</strong> : premier tri des manuscrits reçus par Le Bélial' pendant près d'un an, et rédaction de quelques fiches de lecture pour Albin Michel Imaginaire.</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Page droite : Mes atouts -->
-                <div class="w-[400px] h-[600px] bg-white rounded-r-3xl p-8 shadow-xl border border-l-0 border-violet/10 relative transform rotate-1 hover:rotate-0 transition-transform duration-300 overflow-hidden">
+                <div class="w-full lg:w-1/2 min-h-[500px] lg:h-[700px] bg-white rounded-b-3xl lg:rounded-r-3xl lg:rounded-bl-none p-6 lg:p-10 shadow-xl border border-t-0 lg:border-t lg:border-l-0 border-violet/10 relative transform lg:rotate-1 hover:rotate-0 transition-transform duration-300 overflow-auto">
                     <!-- Effet de reliure sur le bord gauche -->
                     <div class="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-l from-transparent via-violet/5 to-violet/10 pointer-events-none"></div>
                     <div class="absolute left-1 top-4 bottom-4 w-px bg-violet/20"></div>
@@ -147,26 +129,26 @@ title: Accueil
                     
                     <h3 class="text-2xl font-semibold mb-6 text-violet-dark flex items-center gap-3">
                         <div class="flex items-center justify-center w-12 h-12 bg-violet/10 rounded-xl">
-                            <i data-lucide="clover" class="text-violet w-6 h-6"></i>
+                            <i data-lucide="star" class="text-violet w-6 h-6"></i>
                         </div>
                         Mes atouts
                     </h3>
-                    <div class="space-y-4 text-gray-700 leading-relaxed pl-6">
+                    <div class="space-y-4 text-gray-700 leading-relaxed lg:pl-6">
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p>Connaissance solide des règles de la langue française et de la typographie, regard entraîné pour repérer fautes et incohérences.</p>
+                            <p>Ma connaissance des règles de la langue française et de la typographie ainsi que mon regard entraîné à la relecture me permettent de <strong class="text-violet-dark">repérer efficacement les fautes et les incohérences</strong>.</p>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p>Doute actif permanent : vérification attentive de l'orthographe, de la syntaxe, de la construction et de la justesse factuelle.</p>
+                            <p>Je pratique le <strong class="text-violet-dark">doute actif</strong> : je me demande le plus souvent possible si tel mot est bien orthographié, si telle phrase est bien construite, ou si telle information est correcte.</p>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p>Compréhension des attentes éditoriales, rigueur organisationnelle et enrichissement continu via la collaboration.</p>
+                            <p>De mon <strong class="text-violet-dark">expérience d'assistante éditoriale</strong>, j'ai gardé trois forces : comprendre les attentes des éditeurs, travailler avec rigueur et organisation, et enrichir ma pratique grâce à la collaboration avec d'autres correcteurs.</p>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p>Passion pour l'imaginaire (livres, jeux vidéo, films, séries) permettant une vigilance accrue sur la cohérence interne et d'univers étendu.</p>
+                            <p><strong class="text-violet-dark">Passionnée par l'imaginaire</strong> sous toutes ses formes – livres, jeux vidéo, films, séries–, je veille à la cohérence interne des œuvres que je relis, et à celle de l'univers global lorsque le texte appartient à un monde étendu.</p>
                         </div>
                     </div>
                 </div>
@@ -176,18 +158,18 @@ title: Accueil
 </section>
 
 <!-- Services -->
-<section id="services" class="py-24 bg-gradient-to-b from-violet-light/30 to-white">
+<section id="services" class="py-16 lg:py-24 bg-gradient-to-b from-violet-light/30 to-white">
     <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-serif text-violet-dark mb-4">Services proposés</h2>
+        <div class="text-center mb-12 lg:mb-16">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-violet-dark mb-4">Services proposés</h2>
             <div class="w-24 h-1 bg-violet mx-auto rounded-full"></div>
         </div>
         
         <!-- Livre ouvert : Pour qui / Quelles prestations -->
-        <div class="flex justify-center mb-16">
-            <div class="flex w-[800px] h-[500px] relative">
+        <div class="flex justify-center mb-12 lg:mb-16">
+            <div class="flex flex-col lg:flex-row w-full max-w-5xl lg:h-[550px] relative">
                 <!-- Page gauche : Pour qui -->
-                <div class="w-[400px] h-[500px] bg-white rounded-l-3xl p-8 shadow-xl border border-r-0 border-violet/10 relative transform -rotate-1 hover:rotate-0 transition-transform duration-300 overflow-hidden">
+                <div class="w-full lg:w-1/2 min-h-[400px] lg:h-[550px] bg-white rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none p-6 lg:p-10 shadow-xl border border-b-0 lg:border-b lg:border-r-0 border-violet/10 relative transform lg:-rotate-1 hover:rotate-0 transition-transform duration-300 overflow-auto">
                     <!-- Effet de reliure sur le bord droit -->
                     <div class="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-r from-transparent via-violet/5 to-violet/10 pointer-events-none"></div>
                     <div class="absolute right-1 top-4 bottom-4 w-px bg-violet/20"></div>
@@ -199,28 +181,28 @@ title: Accueil
                         </div>
                         Pour qui ?
                     </h3>
-                    <div class="space-y-4 text-gray-700 leading-relaxed pr-6">
+                    <div class="space-y-4 text-gray-700 leading-relaxed lg:pr-6">
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p>Auteurs souhaitant faire corriger leur manuscrit avant publication (autoédition ou envoi aux éditeurs)</p>
+                            <p><strong class="text-violet-dark">Auteurs</strong> qui souhaitent faire corriger leur manuscrit avant publication (en autoédition ou avant envoi aux éditeurs)</p>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p>Maisons d'édition (romans, mangas, webtoons, comics, artbooks, BD, livres de cuisine, essais, scolaire et parascolaire)</p>
+                            <p><strong class="text-violet-dark">Maisons d'édition</strong> (romans, mangas, webtoons, comics, artbooks, BD, livres de cuisine, essais, scolaire et parascolaire)</p>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p>Agences de correction</p>
+                            <p><strong class="text-violet-dark">Agences de correction</strong></p>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p>Plateformes d'autoédition</p>
+                            <p><strong class="text-violet-dark">Plateformes d'autoédition</strong></p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Page droite : Quelles prestations -->
-                <div class="w-[400px] h-[500px] bg-white rounded-r-3xl p-8 shadow-xl border border-l-0 border-violet/10 relative transform rotate-1 hover:rotate-0 transition-transform duration-300 overflow-hidden">
+                <div class="w-full lg:w-1/2 min-h-[400px] lg:h-[550px] bg-white rounded-b-3xl lg:rounded-r-3xl lg:rounded-bl-none p-6 lg:p-10 shadow-xl border border-t-0 lg:border-t lg:border-l-0 border-violet/10 relative transform lg:rotate-1 hover:rotate-0 transition-transform duration-300 overflow-auto">
                     <!-- Effet de reliure sur le bord gauche -->
                     <div class="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-l from-transparent via-violet/5 to-violet/10 pointer-events-none"></div>
                     <div class="absolute left-1 top-4 bottom-4 w-px bg-violet/20"></div>
@@ -232,14 +214,14 @@ title: Accueil
                         </div>
                         Quelles prestations ?
                     </h3>
-                    <div class="space-y-4 text-gray-700 leading-relaxed pl-6">
+                    <div class="space-y-4 text-gray-700 leading-relaxed lg:pl-6">
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p><strong>Correction de manuscrit (Word)</strong> : orthographe, typographie, grammaire, conjugaison, syntaxe, cohérence, vérification factuelle, détection des répétitions</p>
+                            <p><strong class="text-violet-dark">Correction de manuscrit</strong> (Word) : orthographe, typographie, grammaire, conjugaison, syntaxe, cohérence, vérification factuelle, détection des répétitions et propositions de reformulation</p>
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p><strong>Correction d'épreuves (PDF ou InDesign)</strong> : mêmes vérifications que pour un manuscrit + contrôle du lettrage / de la maquette</p>
+                            <p><strong class="text-violet-dark">Correction d'épreuves</strong> (PDF ou InDesign) : même chose que pour la correction d'un manuscrit + vérification du lettrage/de la maquette</p>
                         </div>
                     </div>
                 </div>
@@ -249,10 +231,10 @@ title: Accueil
 </section>
 
 <!-- Tarifs -->
-<section id="tarifs" class="py-24 bg-white">
+<section id="tarifs" class="py-16 lg:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-serif text-violet-dark mb-4">Tarifs</h2>
+        <div class="text-center mb-12 lg:mb-16">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-violet-dark mb-4">Tarifs</h2>
             <div class="w-24 h-1 bg-violet mx-auto rounded-full"></div>
         </div>
         
@@ -261,14 +243,14 @@ title: Accueil
                 <div class="absolute inset-0 bg-gradient-to-br from-violet/20 to-violet-light/30 rounded-2xl blur transform group-hover:scale-105 transition-transform duration-300"></div>
                 <div class="relative bg-gradient-to-br from-violet/10 to-violet-light/20 rounded-2xl p-8 border border-violet/20 shadow-lg">
                     <div class="flex items-center gap-3 mb-4">
-                        <i data-lucide="book-open" class="text-violet w-8 h-8"></i>
+                        <i data-lucide="message-circle" class="text-violet w-8 h-8"></i>
                         <h3 class="text-2xl font-serif text-violet-dark">Mangas, webtoons, comics</h3>
                     </div>
                     <div class="mb-4">
                         <p class="text-5xl font-bold text-violet-dark">140 €</p>
                         <p class="text-lg text-gray-600 font-medium">par volume</p>
                     </div>
-                    <p class="text-sm text-gray-600 leading-relaxed">Un supplément peut être demandé en cas de pagination exceptionnellement élevée.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">Le montant peut être négocié, notamment en cas de pagination élevée.</p>
                 </div>
             </div>
             
@@ -276,14 +258,14 @@ title: Accueil
                 <div class="absolute inset-0 bg-gradient-to-br from-violet-light/20 to-violet/30 rounded-2xl blur transform group-hover:scale-105 transition-transform duration-300"></div>
                 <div class="relative bg-white rounded-2xl p-8 border border-violet/20 shadow-lg">
                     <div class="flex items-center gap-3 mb-4">
-                        <i data-lucide="file-text" class="text-violet w-8 h-8"></i>
+                        <i data-lucide="book" class="text-violet w-8 h-8"></i>
                         <h3 class="text-2xl font-serif text-violet-dark">Autres livres</h3>
                     </div>
                     <div class="mb-4">
                         <p class="text-5xl font-bold text-violet-dark">2,50 €</p>
                         <p class="text-lg text-gray-600 font-medium">pour 1000 signes</p>
                     </div>
-                    <p class="text-sm text-gray-600 leading-relaxed">Tarif adapté selon la complexité et le délai. Devis personnalisé sur demande.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">Le montant peut être négocié en fonction de vos besoins.</p>
                 </div>
             </div>
         </div>
@@ -298,50 +280,47 @@ title: Accueil
 </section>
 
 <!-- Contact -->
-<section id="contact" class="py-24 bg-gradient-to-br from-violet-light/30 via-cream/40 to-violet-light/20">
+<section id="contact" class="py-16 lg:py-24 bg-gradient-to-br from-violet-light/30 via-cream/40 to-violet-light/20">
     <div class="max-w-4xl mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-serif text-violet-dark mb-4">Contact</h2>
+        <div class="text-center mb-12 lg:mb-16">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-violet-dark mb-4">Contact</h2>
             <div class="w-24 h-1 bg-violet mx-auto rounded-full mb-6"></div>
-            <p class="text-xl text-violet-dark max-w-2xl mx-auto leading-relaxed">
-                Un projet, un manuscrit, une série de tomes ou des épreuves à rendre rapidement ? Parlons-en.
+            <p class="text-lg sm:text-xl text-violet-dark max-w-2xl mx-auto leading-relaxed">
+                Vous souhaitez me confier un projet ? Vous avez des questions ? Parlons-en. 🙂
             </p>
         </div>
         
         <!-- Card de contact simple et élégante -->
-        <div class="bg-white rounded-3xl p-12 shadow-2xl border border-violet/10 text-center">
-            <div class="space-y-8">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl border border-violet/10 text-center">
+            <div class="space-y-6 lg:space-y-8">
                 <!-- Icône email -->
                 <div class="flex justify-center">
-                    <div class="w-24 h-24 bg-violet/10 rounded-full flex items-center justify-center">
-                        <i data-lucide="mail" class="w-12 h-12 text-violet"></i>
+                    <div class="w-20 h-20 lg:w-24 lg:h-24 bg-violet/10 rounded-full flex items-center justify-center">
+                        <i data-lucide="mail" class="w-10 h-10 lg:w-12 lg:h-12 text-violet"></i>
                     </div>
                 </div>
                 
                 <!-- Titre et description -->
-                <div class="space-y-4">
-                    <h3 class="text-3xl font-serif text-violet-dark">Écrivez-moi</h3>
-                    <p class="text-lg text-gray-700 max-w-md mx-auto">
-                        Cliquez ci-dessous pour m'envoyer un email avec un modèle pré-rempli
+                <div class="space-y-3 lg:space-y-4">
+                    <h3 class="text-2xl lg:text-3xl font-serif text-violet-dark">Écrivez-moi</h3>
+                    <p class="text-base lg:text-lg text-gray-700 max-w-md mx-auto">
+                        Cliquez ci-dessous pour m'envoyer un email avec un modèle pré-rempli.
                     </p>
                 </div>
                 
                 <!-- Bouton email -->
-                <a href="mailto:violette.pogoda@example.com?subject=Demande de devis - Vio-lettres&body=Bonjour Violette,%0D%0A%0D%0AJe vous contacte concernant :%0D%0A%0D%0AType de projet : %0D%0ANombre de pages/signes : %0D%0ADélai souhaité : %0D%0A%0D%0ADescription du projet :%0D%0A%0D%0ACordialement," 
-                   class="inline-flex items-center gap-3 bg-violet hover:bg-violet-dark text-white font-semibold px-12 py-5 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
-                    <i data-lucide="send" class="w-6 h-6"></i>
-                    violette.pogoda@example.com
+                <a href="mailto:violette.pogoda@gmail.com?subject=Demande de devis - Vio-lettres&body=Bonjour Violette,%0D%0A%0D%0AJe vous contacte concernant :%0D%0A%0D%0AType de projet : %0D%0ANombre de pages/signes : %0D%0ADélai souhaité : %0D%0A%0D%0ADescription du projet :%0D%0A%0D%0ACordialement," 
+                   class="inline-flex items-center gap-2 lg:gap-3 bg-violet hover:bg-violet-dark text-white font-semibold px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-5 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm sm:text-base lg:text-lg">
+                    <i data-lucide="paper-plane" class="w-5 h-5 lg:w-6 lg:h-6"></i>
+                    <span class="break-all sm:break-normal">violette.pogoda@gmail.com</span>
                 </a>
                 
                 <!-- Infos complémentaires -->
-                <div class="pt-8 border-t border-gray-200 space-y-4">
+                <div class="pt-8 border-t border-gray-200">
                     <div class="flex items-center justify-center gap-2 text-violet-dark">
                         <i data-lucide="clock" class="w-5 h-5"></i>
-                        <p class="font-medium">Réponse sous 24h ouvrées</p>
+                        <p class="font-medium">Je vous réponds rapidement.</p>
                     </div>
-                    <p class="text-sm text-gray-600">
-                        N'hésitez pas à préciser : type de projet, nombre de pages/signes, délai souhaité
-                    </p>
                 </div>
             </div>
         </div>
@@ -366,5 +345,45 @@ title: Accueil
     /* Amélioration des focus states */
     input:focus, textarea:focus, select:focus {
         box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    }
+    
+    /* Animations d'entrée pour mobile */
+    @media (max-width: 768px) {
+        .hero-content {
+            animation: slideInUp 0.8s ease-out;
+        }
+        
+        .hero-photo {
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+    }
+    
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Effet overlay pour la photo de profil */
+    .hero-photo .group:hover img {
+        filter: brightness(0.4) contrast(1.1);
+    }
+    
+    /* Amélioration du responsive pour très petits écrans */
+    @media (max-width: 320px) {
+        .hero-buttons {
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .hero-title {
+            font-size: 1.5rem;
+            line-height: 1.3;
+        }
     }
 </style>

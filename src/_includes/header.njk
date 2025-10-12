@@ -1,30 +1,139 @@
-<header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+<header class="fixed w-full bg-white/95 backdrop-blur-md shadow-sm z-50 border-b border-violet/5">
     <div class="max-w-7xl mx-auto px-4">
-        <nav class="flex items-center justify-between h-16">
-            <a href="/" class="flex items-center gap-3 py-1">
-                <img src="/public/logo.png" alt="Vio-lettres" class="h-10 w-auto object-contain" loading="lazy" />
+        <nav class="flex items-center justify-between h-24">
+            <!-- Logo et identité -->
+            <a href="/" class="flex items-center gap-4 py-2 z-50 relative">
+                <img src="/public/logo.png" alt="Vio-lettres" class="h-20 w-auto object-contain" loading="lazy" />
+                <div class="hidden lg:block">
+                    <p class="text-violet-dark font-semibold text-lg leading-tight">Violette Pogoda</p>
+                    <p class="text-violet text-sm font-medium">Correctrice indépendante</p>
+                </div>
             </a>
+            
+            <!-- Navigation desktop -->
             <ul class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <li><a href="/#qui-suis-je" class="nav-link">Qui suis-je</a></li>
+                <li><a href="/#qui-suis-je" class="nav-link">Qui suis-je ?</a></li>
                 <li><a href="/#services" class="nav-link">Services</a></li>
                 <li><a href="/#tarifs" class="nav-link">Tarifs</a></li>
-                <li><a href="/#contact" class="nav-link">Contact</a></li>
             </ul>
-            <a href="/#contact" class="hidden md:inline-block bg-violet text-white px-4 py-2 rounded-lg hover:bg-violet-dark transition-colors text-sm font-medium shadow-sm">Me contacter</a>
+            
+            <!-- Bouton contact desktop -->
+            <a href="/#contact" class="hidden md:inline-flex items-center gap-2 bg-violet text-white px-5 py-2.5 rounded-xl hover:bg-violet-dark transition-all duration-300 text-sm font-medium shadow-sm hover:shadow-md">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                Me contacter
+            </a>
+            
+            <!-- Bouton menu hamburger mobile -->
+            <button class="md:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-violet/5 transition-colors" id="mobile-menu-button">
+                <div class="hamburger-icon">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+            </button>
         </nav>
     </div>
-    <div class="md:hidden border-t border-violet/10 bg-white/95 backdrop-blur-sm">
-        <nav class="max-w-7xl mx-auto px-4 py-3">
-            <ul class="grid grid-cols-2 gap-4 text-sm font-medium">
-                <li><a href="/#qui-suis-je" class="nav-link block">Qui suis-je</a></li>
-                <li><a href="/#services" class="nav-link block">Services</a></li>
-                <li><a href="/#tarifs" class="nav-link block">Tarifs</a></li>
-                <li><a href="/#contact" class="nav-link block">Contact</a></li>
-            </ul>
-        </nav>
+    
+    <!-- Menu mobile -->
+    <div class="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm opacity-0 invisible transition-all duration-300 z-40" id="mobile-menu-overlay">
+        <div class="absolute top-24 left-0 right-0 bg-white/98 backdrop-blur-md shadow-xl border-b border-violet/10 transform -translate-y-full transition-transform duration-300" id="mobile-menu">
+            <nav class="px-4 py-6">
+                <ul class="space-y-1">
+                    <li><a href="/#qui-suis-je" class="mobile-nav-link">Qui suis-je ?</a></li>
+                    <li><a href="/#services" class="mobile-nav-link">Services</a></li>
+                    <li><a href="/#tarifs" class="mobile-nav-link">Tarifs</a></li>
+                </ul>
+                <div class="mt-6 pt-4 border-t border-violet/10">
+                    <a href="/#contact" class="w-full inline-flex items-center justify-center gap-2 bg-violet text-white px-6 py-3 rounded-xl hover:bg-violet-dark transition-all duration-300 font-medium shadow-sm">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        Me contacter
+                    </a>
+                </div>
+            </nav>
+        </div>
     </div>
 </header>
 
 <style>
-    .nav-link { @apply text-gray-700 hover:text-violet-dark transition-colors; }
+    .nav-link { 
+        @apply text-gray-700 hover:text-violet-dark transition-all duration-300 relative;
+    }
+    .nav-link:hover::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #8B7AA8, #4B3B65);
+        border-radius: 1px;
+    }
+    
+    .mobile-nav-link {
+        @apply block text-gray-700 hover:text-violet-dark hover:bg-violet/5 px-4 py-3 rounded-xl transition-all duration-300 font-medium;
+    }
+    
+    /* Hamburger animation */
+    .hamburger-icon {
+        @apply w-5 h-4 relative;
+    }
+    .hamburger-line {
+        @apply absolute left-0 w-full h-0.5 bg-violet-dark transition-all duration-300 ease-in-out;
+    }
+    .hamburger-line:nth-child(1) { top: 0; }
+    .hamburger-line:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    .hamburger-line:nth-child(3) { bottom: 0; }
+    
+    /* Animation quand le menu est ouvert */
+    .menu-open .hamburger-line:nth-child(1) {
+        transform: rotate(45deg);
+        top: 50%;
+        margin-top: -1px;
+    }
+    .menu-open .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-open .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg);
+        bottom: 50%;
+        margin-bottom: -1px;
+    }
+    
+    /* États du menu mobile */
+    .mobile-menu-open #mobile-menu-overlay {
+        @apply opacity-100 visible;
+    }
+    .mobile-menu-open #mobile-menu {
+        @apply translate-y-0;
+    }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuButton = document.getElementById('mobile-menu-button');
+        const menuOverlay = document.getElementById('mobile-menu-overlay');
+        const body = document.body;
+        
+        menuButton.addEventListener('click', function() {
+            body.classList.toggle('mobile-menu-open');
+            menuButton.classList.toggle('menu-open');
+        });
+        
+        // Fermer le menu en cliquant sur l'overlay
+        menuOverlay.addEventListener('click', function(e) {
+            if (e.target === menuOverlay) {
+                body.classList.remove('mobile-menu-open');
+                menuButton.classList.remove('menu-open');
+            }
+        });
+        
+        // Fermer le menu après clic sur un lien
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                body.classList.remove('mobile-menu-open');
+                menuButton.classList.remove('menu-open');
+            });
+        });
+    });
+</script>
