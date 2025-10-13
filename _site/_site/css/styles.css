@@ -786,6 +786,9 @@ video {
 .w-px {
   width: 1px;
 }
+.w-56 {
+  width: 14rem;
+}
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1780,8 +1783,16 @@ video {
     height: 20rem;
   }
 
+  .sm\:h-72 {
+    height: 18rem;
+  }
+
   .sm\:w-72 {
     width: 18rem;
+  }
+
+  .sm\:w-64 {
+    width: 16rem;
   }
 
   .sm\:flex-row {
@@ -1910,12 +1921,20 @@ video {
     height: 700px;
   }
 
+  .lg\:h-80 {
+    height: 20rem;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
 
   .lg\:w-80 {
     width: 20rem;
+  }
+
+  .lg\:w-72 {
+    width: 18rem;
   }
 
   .lg\:-rotate-1 {

@@ -77,14 +77,14 @@ title: Accueil
                        class="photo-frame group relative block bg-white/90 backdrop-blur-sm p-3 rounded-3xl shadow-2xl border border-violet/10 transition-all duration-300 hover:scale-105 hover:shadow-3xl focus:outline-none focus:ring-2 focus:ring-violet/50"
                        aria-label="En savoir plus sur Violette Pogoda - Voir la section Qui suis-je">
                         
-                        <div class="photo-wrapper relative w-64 h-72 sm:w-72 sm:h-80 lg:w-80 lg:h-96 rounded-2xl overflow-hidden">
+                        <div class="photo-wrapper relative w-56 h-64 sm:w-64 sm:h-72 lg:w-72 lg:h-80 rounded-2xl overflow-hidden">
                             <!-- Photo principale -->
                             <img src="/public/photodeprofil.webp" 
                                  alt="Portrait professionnel de Violette Pogoda, correctrice indépendante, souriante" 
                                  class="w-full h-full object-cover object-top transition-all duration-500 group-hover:brightness-50" 
                                  loading="lazy"
-                                 width="320"
-                                 height="384" />
+                                 width="288"
+                                 height="320" />
                             
                             <!-- Overlay interactif "Qui suis-je ?" -->
                             <div class="photo-overlay absolute inset-0 bg-violet/95 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500" aria-hidden="true">
@@ -436,8 +436,8 @@ title: Accueil
         --hero-title-size: clamp(1.5rem, 4vw, 3rem);
         --hero-description-size: clamp(1rem, 2.5vw, 1.25rem);
         --hero-spacing: clamp(1rem, 3vw, 2rem);
-        --photo-size: clamp(16rem, 25vw, 22rem);
-        --photo-height: clamp(18rem, 30vw, 26rem);
+        --photo-size: clamp(14rem, 22vw, 18rem);
+        --photo-height: clamp(16rem, 26vw, 20rem);
     }
     
     /* Gradients personnalisés compatibles cross-browser */
@@ -667,8 +667,8 @@ title: Accueil
         }
         
         .photo-wrapper {
-            width: 18rem;
-            height: 20rem;
+            width: 16rem;
+            height: 18rem;
         }
     }
     
@@ -683,8 +683,8 @@ title: Accueil
         }
         
         .photo-wrapper {
-            width: 19rem;
-            height: 22rem;
+            width: 17rem;
+            height: 19rem;
         }
     }
     
@@ -697,6 +697,11 @@ title: Accueil
         
         .hero-description {
             text-align: left;
+        }
+        
+        .photo-wrapper {
+            width: 18rem;
+            height: 20rem;
         }
     }
     
@@ -808,8 +813,8 @@ title: Accueil
         }
         
         .photo-wrapper {
-            width: 18rem;
-            height: 21rem;
+            width: 16rem;
+            height: 18rem;
         }
         
         @media (max-width: 640px) {
@@ -822,8 +827,8 @@ title: Accueil
             }
             
             .photo-wrapper {
-                width: 16rem;
-                height: 18rem;
+                width: 14rem;
+                height: 16rem;
             }
         }
     }
