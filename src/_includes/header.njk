@@ -11,20 +11,20 @@
             </a>
             
             <!-- Navigation desktop -->
-            <ul class="hidden md:flex items-center space-x-8 text-sm font-medium">
+            <ul class="desktop-nav items-center space-x-8 text-sm font-medium">
                 <li><a href="/#qui-suis-je" class="nav-link">Qui suis-je ?</a></li>
                 <li><a href="/#services" class="nav-link">Services</a></li>
                 <li><a href="/#tarifs" class="nav-link">Tarifs</a></li>
             </ul>
             
             <!-- Bouton contact desktop -->
-            <a href="/#contact" class="hidden md:inline-flex items-center gap-2 bg-violet text-white px-5 py-2.5 rounded-xl hover:bg-violet-dark transition-all duration-300 text-sm font-medium shadow-sm hover:shadow-md">
+            <a href="/#contact" class="desktop-contact items-center gap-2 bg-violet text-white px-5 py-2.5 rounded-xl hover:bg-violet-dark transition-all duration-300 text-sm font-medium shadow-sm hover:shadow-md">
                 <i data-lucide="send" class="w-4 h-4"></i>
                 Me contacter
             </a>
             
             <!-- Bouton menu hamburger mobile -->
-            <button class="md:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-violet/5 transition-colors focus:outline-none focus:ring-2 focus:ring-violet/50" 
+            <button class="mobile-menu-btn relative z-50 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-violet/5 transition-colors focus:outline-none focus:ring-2 focus:ring-violet/50" 
                     id="mobile-menu-button"
                     aria-label="Ouvrir le menu de navigation"
                     aria-expanded="false"
@@ -39,7 +39,7 @@
     </div>
     
     <!-- Menu mobile -->
-    <div class="md:hidden fixed inset-0 opacity-0 invisible transition-all duration-300 z-40" 
+    <div class="mobile-menu-overlay fixed inset-0 opacity-0 invisible transition-all duration-300 z-40" 
          id="mobile-menu-overlay"
          aria-hidden="true"
          style="background-color: rgba(0, 0, 0, 0.2); backdrop-filter: blur(4px);">
@@ -209,6 +209,45 @@
         -webkit-overflow-scrolling: touch;
     }
     
+    /* === BREAKPOINT PERSONNALISÉ À 840px === */
+    
+    /* Navigation desktop visible à partir de 840px */
+    .desktop-nav {
+        display: none;
+    }
+    
+    .desktop-contact {
+        display: none;
+    }
+    
+    /* Menu mobile visible jusqu'à 840px */
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .mobile-menu-overlay {
+        display: block;
+    }
+    
+    /* À partir de 840px : afficher desktop, masquer mobile */
+    @media (min-width: 840px) {
+        .desktop-nav {
+            display: flex;
+        }
+        
+        .desktop-contact {
+            display: inline-flex;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+        }
+        
+        .mobile-menu-overlay {
+            display: none;
+        }
+    }
+    
     /* Styles pour écran très petit */
     @media (max-height: 600px) {
         #mobile-menu nav {
@@ -217,11 +256,6 @@
         
         .mobile-nav-link {
             padding: 0.75rem 1rem;
-        }
-        
-        .mobile-nav-icon {
-            width: 2rem;
-            height: 2rem;
         }
     }
 </style>
