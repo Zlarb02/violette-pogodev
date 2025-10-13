@@ -1,27 +1,55 @@
 <footer class="bg-violet-dark text-white py-12 lg:py-16">
     <div class="max-w-7xl mx-auto px-4">
         <!-- Layout mobile : centré et empilé -->
-        <div class="lg:hidden text-center space-y-6">
+        <div class="lg:hidden text-center space-y-8">
             <!-- Logo et titre -->
-            <div class="space-y-2">
+            <div class="space-y-3">
                 <img src="/public/logo-footer.png" alt="Logo Vio-lettres" class="h-16 w-auto mx-auto opacity-90 drop-shadow-lg filter brightness-110 contrast-110" />
-                <h3 class="text-lg font-semibold">Violette Pogoda</h3>
-                <p class="text-violet-light text-sm">Correctrice indépendante</p>
+                <div class="space-y-1">
+                    <h3 class="text-lg font-semibold">Violette Pogoda</h3>
+                    <p class="text-violet-light text-sm">Correctrice indépendante</p>
+                </div>
             </div>
             
-            <!-- Contact rapide -->
-            <div class="space-y-3">
+            <!-- Phrase d'accroche mobile -->
+            <div class="px-4">
+                <p class="text-sm text-violet-light leading-relaxed max-w-sm mx-auto">
+                    Là où manuscrits et épreuves sont peaufinés pour se métamorphoser en livres prêts à rencontrer leurs lecteurs.
+                </p>
+            </div>
+            
+            <!-- Contact et réseaux -->
+            <div class="space-y-4">
+                <!-- Email -->
                 <div class="flex items-center justify-center gap-2 text-sm">
-                    <i data-lucide="paper-plane" class="w-4 h-4"></i>
-                    <a href="mailto:violette.pogoda@gmail.com" class="hover:text-violet-light transition-colors">
+                    <i data-lucide="paper-plane" class="w-4 h-4 text-violet-light" aria-hidden="true"></i>
+                    <a href="mailto:violette.pogoda@gmail.com" 
+                       class="text-violet-light hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-violet-light/50 rounded transition-colors"
+                       aria-label="Envoyer un email à Violette Pogoda">
                         violette.pogoda@gmail.com
                     </a>
+                </div>
+                
+                <!-- LinkedIn -->
+                <div class="flex items-center justify-center gap-2 text-sm">
+                    <i data-lucide="linkedin" class="w-4 h-4 text-violet-light" aria-hidden="true"></i>
+                    <a href="https://www.linkedin.com/in/v-pgd/" target="_blank" rel="noopener noreferrer"
+                       class="text-violet-light hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-violet-light/50 rounded transition-colors"
+                       aria-label="Profil LinkedIn de Violette Pogoda (ouvre dans un nouvel onglet)">
+                        LinkedIn
+                    </a>
+                </div>
+                
+                <!-- Info réactivité -->
+                <div class="flex items-center justify-center gap-2 text-xs text-violet-light/80">
+                    <i data-lucide="clock" class="w-3 h-3" aria-hidden="true"></i>
+                    <span>Je réponds rapidement</span>
                 </div>
             </div>
             
             <!-- Copyright -->
-            <div class="pt-4 border-t border-violet/30">
-                <p class="text-xs text-violet-light">© {{ "now" | date("yyyy") }} Violette Pogoda. Tous droits réservés.</p>
+            <div class="pt-6 border-t border-violet/30">
+                <p class="text-xs text-violet-light/80">© {{ "now" | date("yyyy") }} Violette Pogoda. Tous droits réservés.</p>
             </div>
         </div>
         
@@ -94,15 +122,20 @@
             <!-- Séparateur et copyright -->
             <div class="mt-12 pt-8 border-t border-violet/30">
                 <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
-                    <p class="text-xs text-violet-light">
+                    <p class="text-xs text-violet-light/80 text-center lg:text-left">
                         © {{ "now" | date("yyyy") }} Violette Pogoda. Tous droits réservés.
                     </p>
-                    <div class="flex items-center gap-4 text-xs text-violet-light">
+                    <div class="flex items-center gap-6 text-xs">
                         <a href="https://www.linkedin.com/in/v-pgd/" target="_blank" rel="noopener noreferrer"
-                           class="hover:text-white transition-colors flex items-center gap-2">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                           class="text-violet-light hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-violet-light/50 rounded px-2 py-1 transition-colors flex items-center gap-2"
+                           aria-label="Profil LinkedIn de Violette Pogoda (ouvre dans un nouvel onglet)">
+                            <i data-lucide="linkedin" class="w-4 h-4" aria-hidden="true"></i>
                             <span>LinkedIn</span>
                         </a>
+                        <div class="text-violet-light/60 flex items-center gap-1">
+                            <i data-lucide="heart" class="w-3 h-3" aria-hidden="true"></i>
+                            <span>Fait avec passion</span>
+                        </div>
                     </div>
                 </div>
             </div>

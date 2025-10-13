@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vio-lettres | Correctrice indépendante</title>
     <meta name="description" content="Violette Pogoda, correctrice certifiée Le Robert (mangas, romans, beaux livres). Orthographe, typographie, cohérence. Devis rapide ✨">
+    <meta name="keywords" content="correctrice, correction, manuscrit, épreuves, mangas, romans, orthographe, typographie, édition, relecture">
+    <meta name="author" content="Violette Pogoda">
+    <meta name="robots" content="index, follow">
     <meta property="og:title" content="Vio-lettres | Correctrice indépendante">
     <meta property="og:description" content="Correctrice experte mangas & romans : orthographe, style, typographie, cohérence. Plus de 10 ans d'expérience éditoriale. Manuscrit prêt à publier garanti.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://violette.pogodev.com/">
+    <meta property="og:image" content="https://violette.pogodev.com/public/photodeprofil.webp">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vio-lettres | Correctrice indépendante">
+    <meta name="twitter:description" content="Correctrice experte mangas & romans : orthographe, style, typographie, cohérence.">
+    <meta name="twitter:image" content="https://violette.pogodev.com/public/photodeprofil.webp">
     <link rel="icon" type="image/png" href="/public/favicon.png">
     <link rel="shortcut icon" type="image/png" href="/public/favicon.png">
+    <link rel="apple-touch-icon" href="/public/favicon.png">
+    <meta name="theme-color" content="#8B7AA8">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,9 +49,15 @@
         </script>
 </head>
 <body class="bg-cream text-gray-900 font-sans">
+    <!-- Skip link pour l'accessibilité -->
+    <a href="#main-content" 
+       class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-violet text-white px-4 py-2 rounded-lg font-medium z-50 focus:outline-none focus:ring-2 focus:ring-violet/50">
+        Aller au contenu principal
+    </a>
+    
     {% include "header.njk" %}
     
-    <main>
+    <main id="main-content">
         {{ content | safe }}
     </main>
 

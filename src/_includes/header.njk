@@ -24,28 +24,54 @@
             </a>
             
             <!-- Bouton menu hamburger mobile -->
-            <button class="md:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-violet/5 transition-colors" id="mobile-menu-button">
+            <button class="md:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-violet/5 transition-colors focus:outline-none focus:ring-2 focus:ring-violet/50" 
+                    id="mobile-menu-button"
+                    aria-label="Ouvrir le menu de navigation"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu">
                 <div class="hamburger-icon">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
                 </div>
             </button>
         </nav>
     </div>
     
     <!-- Menu mobile -->
-    <div class="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm opacity-0 invisible transition-all duration-300 z-40" id="mobile-menu-overlay">
-        <div class="absolute top-24 left-0 right-0 bg-white/98 backdrop-blur-md shadow-xl border-b border-violet/10 transform -translate-y-full transition-transform duration-300" id="mobile-menu">
-            <nav class="px-4 py-6">
-                <ul class="space-y-1">
-                    <li><a href="/#qui-suis-je" class="mobile-nav-link">Qui suis-je ?</a></li>
-                    <li><a href="/#services" class="mobile-nav-link">Services</a></li>
-                    <li><a href="/#tarifs" class="mobile-nav-link">Tarifs</a></li>
+    <div class="md:hidden fixed inset-0 opacity-0 invisible transition-all duration-300 z-40" 
+         id="mobile-menu-overlay"
+         aria-hidden="true"
+         style="background-color: rgba(0, 0, 0, 0.2); backdrop-filter: blur(4px);">
+        <div class="absolute top-24 left-0 right-0 transform -translate-y-full transition-transform duration-300" 
+             id="mobile-menu"
+             role="dialog"
+             aria-labelledby="mobile-menu-button"
+             style="background-color: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); border-bottom: 1px solid rgba(139, 122, 168, 0.1);">
+            <nav class="px-4 py-6" aria-label="Navigation mobile">
+                <ul class="space-y-3 mb-6" role="list">
+                    <li role="listitem">
+                        <a href="/#qui-suis-je" class="mobile-nav-link" tabindex="-1">
+                            Qui suis-je ?
+                        </a>
+                    </li>
+                    <li role="listitem">
+                        <a href="/#services" class="mobile-nav-link" tabindex="-1">
+                            Services
+                        </a>
+                    </li>
+                    <li role="listitem">
+                        <a href="/#tarifs" class="mobile-nav-link" tabindex="-1">
+                            Tarifs
+                        </a>
+                    </li>
                 </ul>
-                <div class="mt-6 pt-4 border-t border-violet/10">
-                    <a href="/#contact" class="w-full inline-flex items-center justify-center gap-2 bg-violet text-white px-6 py-3 rounded-xl hover:bg-violet-dark transition-all duration-300 font-medium shadow-sm">
-                        <i data-lucide="send" class="w-4 h-4"></i>
+                
+                <div class="pt-4 border-t border-violet/5">
+                    <a href="/#contact" 
+                       class="w-full inline-flex items-center justify-center gap-2 bg-violet text-white px-6 py-3 rounded-xl hover:bg-violet-dark focus:outline-none focus:ring-2 focus:ring-violet/50 transition-all duration-300 font-medium shadow-sm"
+                       tabindex="-1">
+                        <i data-lucide="send" class="w-4 h-4" aria-hidden="true"></i>
                         Me contacter
                     </a>
                 </div>
@@ -56,7 +82,12 @@
 
 <style>
     .nav-link { 
-        @apply text-gray-700 hover:text-violet-dark transition-all duration-300 relative;
+        color: #374151;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    .nav-link:hover {
+        color: #4B3B65;
     }
     .nav-link:hover::after {
         content: '';
@@ -69,16 +100,39 @@
         border-radius: 1px;
     }
     
+    /* Styles épurés pour les liens de navigation mobile */
     .mobile-nav-link {
-        @apply block text-gray-700 hover:text-violet-dark hover:bg-violet/5 px-4 py-3 rounded-xl transition-all duration-300 font-medium;
+        display: block;
+        color: #374151;
+        padding: 1rem 1.25rem;
+        border-radius: 0.75rem;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        text-decoration: none;
+        border: 1px solid rgba(139, 122, 168, 0.08);
+        background: rgba(255, 255, 255, 0.7);
+    }
+    
+    .mobile-nav-link:hover {
+        color: #4B3B65;
+        background: rgba(139, 122, 168, 0.05);
+        border-color: rgba(139, 122, 168, 0.12);
     }
     
     /* Hamburger animation */
     .hamburger-icon {
-        @apply w-5 h-4 relative;
+        width: 1.25rem;
+        height: 1rem;
+        position: relative;
     }
     .hamburger-line {
-        @apply absolute left-0 w-full h-0.5 bg-violet-dark transition-all duration-300 ease-in-out;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #4B3B65;
+        transition: all 0.3s ease-in-out;
+        border-radius: 1px;
     }
     .hamburger-line:nth-child(1) { top: 0; }
     .hamburger-line:nth-child(2) { top: 50%; transform: translateY(-50%); }
@@ -101,10 +155,74 @@
     
     /* États du menu mobile */
     .mobile-menu-open #mobile-menu-overlay {
-        @apply opacity-100 visible;
+        opacity: 1;
+        visibility: visible;
     }
     .mobile-menu-open #mobile-menu {
-        @apply translate-y-0;
+        transform: translateY(0);
+    }
+    
+    /* Styles supplémentaires pour le menu mobile */
+    #mobile-menu-overlay {
+        /* Fallback pour navigateurs sans backdrop-filter */
+        background: rgba(0, 0, 0, 0.3);
+    }
+    
+    #mobile-menu {
+        /* Fallback pour navigateurs sans backdrop-filter */
+        background: #ffffff;
+        border: 1px solid rgba(139, 122, 168, 0.1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Support moderne avec backdrop-filter */
+    @supports (backdrop-filter: blur(4px)) {
+        #mobile-menu-overlay {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        #mobile-menu {
+            background: rgba(255, 255, 255, 0.98);
+        }
+    }
+    
+    /* Animation d'entrée du menu */
+    .mobile-menu-open #mobile-menu {
+        animation: menuSlideIn 0.4s ease-out forwards;
+    }
+    
+    @keyframes menuSlideIn {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    /* Amélioration du scroll du menu si contenu trop long */
+    #mobile-menu {
+        max-height: calc(100vh - 6rem);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Styles pour écran très petit */
+    @media (max-height: 600px) {
+        #mobile-menu nav {
+            padding: 1rem 1.5rem;
+        }
+        
+        .mobile-nav-link {
+            padding: 0.75rem 1rem;
+        }
+        
+        .mobile-nav-icon {
+            width: 2rem;
+            height: 2rem;
+        }
     }
 </style>
 
@@ -112,28 +230,97 @@
     document.addEventListener('DOMContentLoaded', function() {
         const menuButton = document.getElementById('mobile-menu-button');
         const menuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
         const body = document.body;
         
+        function openMobileMenu() {
+            body.classList.add('mobile-menu-open');
+            menuButton.classList.add('menu-open');
+            menuButton.setAttribute('aria-expanded', 'true');
+            menuButton.setAttribute('aria-label', 'Fermer le menu de navigation');
+            menuOverlay.setAttribute('aria-hidden', 'false');
+            
+            // Gérer le focus pour l'accessibilité
+            mobileLinks.forEach(link => link.setAttribute('tabindex', '0'));
+            if (mobileLinks.length > 0) {
+                mobileLinks[0].focus();
+            }
+            
+            // Empêcher le scroll du body
+            body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            body.classList.remove('mobile-menu-open');
+            menuButton.classList.remove('menu-open');
+            menuButton.setAttribute('aria-expanded', 'false');
+            menuButton.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+            menuOverlay.setAttribute('aria-hidden', 'true');
+            
+            // Restaurer le focus et les tabindex
+            mobileLinks.forEach(link => link.setAttribute('tabindex', '-1'));
+            menuButton.focus();
+            
+            // Restaurer le scroll du body
+            body.style.overflow = '';
+        }
+        
         menuButton.addEventListener('click', function() {
-            body.classList.toggle('mobile-menu-open');
-            menuButton.classList.toggle('menu-open');
+            const isOpen = body.classList.contains('mobile-menu-open');
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
         
-        // Fermer le menu en cliquant sur l'overlay
+        // Fermer le menu en cliquant sur l'overlay ou en dehors du menu
         menuOverlay.addEventListener('click', function(e) {
-            if (e.target === menuOverlay) {
-                body.classList.remove('mobile-menu-open');
-                menuButton.classList.remove('menu-open');
+            // Fermer si on clique sur l'overlay ou en dehors du menu
+            if (e.target === menuOverlay || !mobileMenu.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Fermer le menu en cliquant n'importe où sur la page quand le menu est ouvert
+        document.addEventListener('click', function(e) {
+            if (body.classList.contains('mobile-menu-open')) {
+                // Ne pas fermer si on clique sur le bouton menu ou dans le menu
+                if (!menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    closeMobileMenu();
+                }
             }
         });
         
         // Fermer le menu après clic sur un lien
-        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
         mobileLinks.forEach(link => {
             link.addEventListener('click', function() {
-                body.classList.remove('mobile-menu-open');
-                menuButton.classList.remove('menu-open');
+                closeMobileMenu();
             });
+        });
+        
+        // Fermer le menu avec la touche Échap
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && body.classList.contains('mobile-menu-open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Navigation au clavier dans le menu mobile
+        mobileMenu.addEventListener('keydown', function(e) {
+            const focusableElements = mobileMenu.querySelectorAll('a[tabindex="0"]');
+            const currentIndex = Array.from(focusableElements).indexOf(document.activeElement);
+            
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                const nextIndex = (currentIndex + 1) % focusableElements.length;
+                focusableElements[nextIndex].focus();
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                const prevIndex = currentIndex <= 0 ? focusableElements.length - 1 : currentIndex - 1;
+                focusableElements[prevIndex].focus();
+            }
         });
     });
 </script>
