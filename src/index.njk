@@ -405,14 +405,75 @@ title: Accueil
 </section>
 
 <style>
-    /* === HERO SECTION - STYLES RESPONSIFS OPTIMISÉS === */
+    /* === HERO SECTION - RESPONSIVE MODERNE ET COHÉRENT === */
     
-    /* Gradient radial personnalisé pour l'effet d'éclairage */
+    /* Variables CSS pour une approche plus fluide */
+    :root {
+        --hero-title-size: clamp(1.5rem, 4vw, 3rem);
+        --hero-description-size: clamp(1rem, 2.5vw, 1.25rem);
+        --hero-spacing: clamp(1rem, 3vw, 2rem);
+        --photo-size: clamp(16rem, 25vw, 22rem);
+        --photo-height: clamp(18rem, 30vw, 26rem);
+    }
+    
+    /* Gradient radial personnalisé */
     .bg-gradient-radial {
         background: radial-gradient(circle, var(--tw-gradient-stops));
     }
     
-    /* Animation d'entrée fluide pour mobile */
+    /* === TITRE PRINCIPAL - TOUJOURS SUR UNE LIGNE === */
+    .hero-title {
+        font-size: var(--hero-title-size);
+        line-height: 1.1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        overflow: visible;
+    }
+    
+    @media (min-width: 1024px) {
+        .hero-title {
+            justify-content: flex-start;
+        }
+    }
+    
+    .hero-brand {
+        padding: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 2.5vw, 2rem);
+        margin: 0 0.5rem;
+        font-size: inherit;
+        line-height: inherit;
+    }
+    
+    /* === DESCRIPTION RESPONSIVE === */
+    .hero-description {
+        font-size: var(--hero-description-size);
+        line-height: 1.6;
+        max-width: min(100%, 42rem);
+    }
+    
+    /* === PHOTO RESPONSIVE === */
+    .photo-wrapper {
+        width: var(--photo-size);
+        height: var(--photo-height);
+        aspect-ratio: 4/5;
+    }
+    
+    /* === LAYOUT GRID FLUIDE === */
+    .hero-grid {
+        gap: var(--hero-spacing);
+        align-items: center;
+    }
+    
+    /* === BOUTONS RESPONSIVE === */
+    .hero-buttons a {
+        padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+        font-size: clamp(0.875rem, 2vw, 1rem);
+        border-radius: clamp(1rem, 2vw, 1.5rem);
+    }
+    
+    /* === ANIMATIONS D'ENTRÉE === */
     @media (max-width: 1023px) {
         .hero-content {
             animation: slideInUp 0.8s ease-out;
@@ -434,135 +495,88 @@ title: Accueil
         }
     }
     
-    /* === RESPONSIVE BREAKPOINTS OPTIMISÉS === */
+    /* === BREAKPOINTS SPÉCIFIQUES === */
     
-    /* Mobile portrait (320px - 640px) */
-    @media (max-width: 639px) {
+    /* Mobile très petit (320px - 480px) */
+    @media (max-width: 480px) {
         .hero-title {
-            font-size: 1.75rem !important; /* 28px */
-            line-height: 1.2;
+            font-size: 1.25rem;
+            text-align: center;
         }
         
-        .hero-title span {
-            display: block;
-            margin-top: 0.5rem;
-            padding: 0.75rem 1.5rem !important;
-            font-size: 1.75rem !important;
+        .hero-brand {
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
         }
         
         .hero-description {
-            font-size: 1rem !important; /* 16px */
-            line-height: 1.5;
+            font-size: 0.9rem;
+            text-align: center;
         }
         
         .photo-wrapper {
-            width: 16rem !important; /* 256px */
-            height: 18rem !important; /* 288px */
+            width: 14rem;
+            height: 16rem;
         }
     }
     
-    /* Mobile landscape / Small tablet (640px - 768px) */
-    @media (min-width: 640px) and (max-width: 767px) {
+    /* Mobile standard (480px - 640px) */
+    @media (min-width: 480px) and (max-width: 640px) {
         .hero-title {
-            font-size: 2rem; /* 32px */
+            font-size: 1.5rem;
         }
         
         .hero-description {
-            font-size: 1.125rem; /* 18px */
+            font-size: 1rem;
         }
         
         .photo-wrapper {
-            width: 18rem; /* 288px */
-            height: 20rem; /* 320px */
+            width: 16rem;
+            height: 18rem;
         }
     }
     
-    /* Tablet (768px - 1024px) */
-    @media (min-width: 768px) and (max-width: 1023px) {
-        .hero-grid {
-            gap: 3rem !important;
-        }
-        
+    /* Tablet portrait (640px - 768px) */
+    @media (min-width: 640px) and (max-width: 768px) {
         .hero-title {
-            font-size: 2.5rem; /* 40px */
+            font-size: 1.75rem;
         }
         
         .hero-description {
-            font-size: 1.25rem; /* 20px */
+            font-size: 1.1rem;
         }
         
         .photo-wrapper {
-            width: 20rem; /* 320px */
-            height: 22rem; /* 352px */
+            width: 18rem;
+            height: 20rem;
         }
     }
     
-    /* Desktop (1024px - 1280px) */
-    @media (min-width: 1024px) and (max-width: 1279px) {
-        .hero-grid {
-            gap: 2rem !important;
-        }
-        
+    /* Tablet landscape (768px - 1024px) */
+    @media (min-width: 768px) and (max-width: 1024px) {
         .hero-title {
-            font-size: 2.25rem; /* 36px */
+            font-size: 2rem;
         }
         
         .hero-description {
-            font-size: 1.125rem; /* 18px */
+            font-size: 1.125rem;
         }
         
         .photo-wrapper {
-            width: 18rem; /* 288px */
-            height: 21rem; /* 336px */
+            width: 19rem;
+            height: 22rem;
         }
     }
     
-    /* Large desktop (1280px - 1536px) */
-    @media (min-width: 1280px) and (max-width: 1535px) {
-        .hero-grid {
-            gap: 3rem !important;
-        }
-        
+    /* Desktop (1024px+) */
+    @media (min-width: 1024px) {
         .hero-title {
-            font-size: 2.75rem; /* 44px */
+            text-align: left;
+            justify-content: flex-start;
         }
         
         .hero-description {
-            font-size: 1.25rem; /* 20px */
-        }
-        
-        .photo-wrapper {
-            width: 20rem; /* 320px */
-            height: 24rem; /* 384px */
-        }
-    }
-    
-    /* Extra large desktop (1536px+) */
-    @media (min-width: 1536px) {
-        .hero-grid {
-            gap: 4rem !important;
-        }
-        
-        .hero-title {
-            font-size: 3rem; /* 48px */
-        }
-        
-        .hero-title span {
-            padding: 1rem 2rem !important;
-        }
-        
-        .hero-description {
-            font-size: 1.375rem; /* 22px */
-        }
-        
-        .hero-buttons a {
-            padding: 1.125rem 2.25rem !important;
-            font-size: 1.125rem !important;
-        }
-        
-        .photo-wrapper {
-            width: 22rem; /* 352px */
-            height: 26rem; /* 416px */
+            text-align: left;
         }
     }
     
@@ -579,7 +593,7 @@ title: Accueil
         box-shadow: 0 0 0 3px rgba(139, 122, 168, 0.1);
     }
     
-    /* Effet de hover sur la photo - plus subtil */
+    /* Effet de hover sur la photo */
     .photo-frame:hover .photo-wrapper img {
         filter: brightness(0.5) contrast(1.1);
     }
@@ -593,12 +607,10 @@ title: Accueil
     
     /* === OPTIMISATIONS PERFORMANCES === */
     
-    /* Préchargement des transformations */
     .hero-section * {
-        will-change: transform, opacity;
+        will-change: auto;
     }
     
-    /* Optimisation pour les animations */
     .photo-overlay,
     .hero-cta-primary,
     .hero-cta-secondary {
@@ -606,7 +618,7 @@ title: Accueil
         transform-style: preserve-3d;
     }
     
-    /* === CORRECTIONS CROSS-BROWSER === */
+    /* === SUPPORT CROSS-BROWSER === */
     
     /* Safari iOS */
     @supports (-webkit-touch-callout: none) {
@@ -615,10 +627,34 @@ title: Accueil
         }
     }
     
-    /* Firefox */
-    @-moz-document url-prefix() {
+    /* Fallback pour browsers sans support clamp() */
+    @supports not (font-size: clamp(1rem, 1vw, 1rem)) {
+        .hero-title {
+            font-size: 2rem;
+        }
+        
+        .hero-description {
+            font-size: 1.125rem;
+        }
+        
         .photo-wrapper {
-            transform: translateZ(0);
+            width: 18rem;
+            height: 21rem;
+        }
+        
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .photo-wrapper {
+                width: 16rem;
+                height: 18rem;
+            }
         }
     }
 
