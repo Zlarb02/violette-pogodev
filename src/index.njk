@@ -10,28 +10,30 @@ title: Accueil
     <!-- Fond simplifié pour mobile -->
     <div class="lg:hidden absolute inset-0 bg-gradient-to-b from-white via-violet-light/10 to-violet-light/20"></div>
     
-    <div class="relative max-w-7xl mx-auto px-4">
-        <!-- Layout mobile: tout centré et empilé -->
-        <div class="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+    <div class="relative w-full max-w-7xl 2xl:max-w-none 2xl:px-12 3xl:px-24 mx-auto px-4">
+        <!-- Layout responsive: optimisé pour tous les écrans -->
+        <div class="md:grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 lg:gap-12 xl:gap-16 2xl:gap-20 3xl:gap-24 lg:items-center xl:items-start">
             <!-- Section principale mobile/desktop -->
-            <div class="hero-content text-center lg:text-left space-y-6 lg:space-y-8 mb-8 lg:mb-0">
+            <div class="hero-content text-center md:text-center lg:text-left xl:text-left space-y-6 md:space-y-8 lg:space-y-8 xl:space-y-12 mb-8 md:mb-12 lg:mb-0 xl:mb-16">
                 <!-- Logo et titre principal -->
-                <div class="space-y-4">
-                    <div class="flex justify-center lg:justify-start">
-                        <img src="/public/logo.png" alt="Logo Vio-lettres" class="h-20 sm:h-24 lg:h-32 w-auto object-contain drop-shadow-lg invisible lg:visible" />
+                <div class="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-8 xl:space-y-12">
+                    <div class="flex justify-center lg:justify-start xl:justify-center">
+                        <img src="/public/logo.png" alt="Logo Vio-lettres" class="h-24 sm:h-28 lg:h-36 xl:h-48 w-auto object-contain drop-shadow-lg invisible lg:visible xl:visible" />
                     </div>
                     
-                    <h1 class="hero-title font-serif text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-tight text-violet-dark max-w-3xl mx-auto lg:mx-0">
-                        Bienvenue chez <span class="text-violet font-bold bg-violet/5 px-2 py-1 rounded-lg whitespace-nowrap">Vio-lettres</span>&nbsp;!
-                    </h1>
-                    
-                    <p class="text-gray-700 text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
-                        Là où manuscrits et épreuves sont peaufinés, caractère après caractère, bulle après bulle, pour se métamorphoser en livres prêts à rencontrer leurs lecteurs.
-                    </p>
+                    <div class="space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-10 xl:space-y-14">
+                        <h1 class="hero-title font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl leading-tight xl:leading-relaxed text-violet-dark mx-auto lg:mx-0 xl:mx-auto whitespace-nowrap">
+                            Bienvenue chez <span class="text-violet font-bold bg-gradient-to-r from-violet-light/5 to-white/90 px-4 py-2 md:px-5 md:py-3 lg:px-5 lg:py-3 xl:px-6 xl:py-4 rounded-2xl shadow-xl whitespace-nowrap border border-violet/20">Vio-lettres</span> !
+                        </h1>
+                        
+                        <p class="text-gray-700 text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl leading-relaxed sm:leading-relaxed md:leading-loose lg:leading-relaxed xl:leading-loose 2xl:leading-loose max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-3xl mx-auto lg:mx-0 xl:mx-auto font-light">
+                            Là où manuscrits et épreuves sont peaufinés, caractère après caractère, bulle après bulle, pour se métamorphoser en livres prêts à rencontrer leurs lecteurs.
+                        </p>
+                    </div>
                 </div>
             
                 <!-- Boutons d'action -->
-                <div class="hero-buttons space-y-4 sm:space-y-0 sm:flex sm:gap-4 sm:justify-center lg:justify-start">
+                <div class="hero-buttons space-y-4 sm:space-y-0 sm:flex sm:gap-4 sm:justify-center md:justify-center lg:justify-start xl:justify-center xl:gap-6">
                     <a href="#services" class="group relative inline-flex items-center justify-center gap-3 bg-violet text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl hover:bg-violet-dark transform hover:-translate-y-1 w-full sm:w-auto">
                         <span>Découvrir mes services</span>
                     </a>
@@ -43,14 +45,14 @@ title: Accueil
             </div>
             
             <!-- Photo de profil interactive - repositionnée pour mobile -->
-            <div class="hero-photo flex justify-center lg:justify-end">
-                <div class="relative mt-8 lg:mt-0 lg:-mt-12">
+            <div class="hero-photo flex justify-center lg:justify-end xl:justify-center">
+                <div class="relative mt-8 lg:mt-0 lg:-mt-12 xl:mt-8">
                     <!-- Éclairage doux -->
                     <div class="absolute -inset-4 bg-gradient-radial from-violet/5 via-violet/2 to-transparent rounded-full blur-2xl"></div>
                     
                     <!-- Cadre interactif avec overlay -->
                     <a href="#qui-suis-je" class="group relative block bg-white/90 backdrop-blur-sm p-3 rounded-3xl shadow-2xl border border-violet/10 transition-all duration-300 hover:shadow-3xl hover:scale-105">
-                        <div class="relative w-48 h-56 sm:w-56 sm:h-64 lg:w-64 lg:h-72 rounded-2xl overflow-hidden">
+                        <div class="relative w-48 h-56 sm:w-56 sm:h-64 lg:w-64 lg:h-72 xl:w-80 xl:h-96 2xl:w-80 2xl:h-96 3xl:w-96 3xl:h-112 rounded-2xl overflow-hidden">
                             <!-- Photo de base -->
                             <img src="/public/photodeprofil.webp" alt="Portrait de Violette Pogoda" 
                                  class="w-full h-full object-cover object-top transition-all duration-500 group-hover:brightness-50" 
@@ -383,6 +385,11 @@ title: Accueil
 </section>
 
 <style>
+    /* Classes personnalisées pour les grands écrans */
+    .h-112 { height: 28rem; }
+    .w-96 { width: 24rem; }
+    .max-w-8xl { max-width: 88rem; }
+    
     .prose p { @apply leading-relaxed; }
     
     /* Animation pour les icônes au hover */
@@ -427,6 +434,47 @@ title: Accueil
     /* Effet overlay pour la photo de profil */
     .hero-photo .group:hover img {
         filter: brightness(0.4) contrast(1.1);
+    }
+    
+    /* Optimisations pour les grands écrans (Windows & Mac 27"+) */
+    @media (min-width: 1536px) {
+        .hero-content {
+            padding-right: 2rem;
+        }
+        
+        .hero-photo {
+            transform: scale(1.1);
+        }
+        
+        .hero-buttons a {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.125rem;
+        }
+        
+        .hero-title span {
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+        }
+    }
+    
+    /* Optimisations pour les très grands écrans (4K+) */
+    @media (min-width: 2560px) {
+        .hero-content {
+            padding-right: 4rem;
+        }
+        
+        .hero-photo {
+            transform: scale(1.2);
+        }
+        
+        .hero-buttons {
+            gap: 2rem;
+        }
+        
+        .hero-buttons a {
+            padding: 1.5rem 3rem;
+            font-size: 1.25rem;
+        }
     }
     
     /* Amélioration du responsive pour très petits écrans */
