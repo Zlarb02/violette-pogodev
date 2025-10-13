@@ -21,8 +21,8 @@ title: Accueil
                         <img src="/public/logo.png" alt="Logo Vio-lettres" class="h-20 sm:h-24 lg:h-32 w-auto object-contain drop-shadow-lg invisible lg:visible" />
                     </div>
                     
-                    <h1 class="hero-title font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-5xl leading-tight text-violet-dark max-w-3xl mx-auto lg:mx-0">
-                        Bienvenue chez <span class="text-violet font-bold bg-violet/5 px-2 py-1 rounded-lg">Vio-lettres</span> !
+                    <h1 class="hero-title font-serif text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-tight text-violet-dark max-w-3xl mx-auto lg:mx-0">
+                        Bienvenue chez <span class="text-violet font-bold bg-violet/5 px-2 py-1 rounded-lg whitespace-nowrap">Vio-lettres</span>&nbsp;!
                     </h1>
                     
                     <p class="text-gray-700 text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
@@ -129,7 +129,7 @@ title: Accueil
                     
                     <h3 class="text-2xl font-semibold mb-6 text-violet-dark flex items-center gap-3">
                         <div class="flex items-center justify-center w-12 h-12 bg-violet/10 rounded-xl">
-                            <i data-lucide="star" class="text-violet w-6 h-6"></i>
+                            <i class="ph-bold ph-club text-violet text-2xl"></i>
                         </div>
                         Mes atouts
                     </h3>
@@ -148,7 +148,7 @@ title: Accueil
                         </div>
                         <div class="flex items-start gap-3">
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p><strong class="text-violet-dark">Passionnée par l'imaginaire</strong> sous toutes ses formes – livres, jeux vidéo, films, séries–, je veille à la cohérence interne des œuvres que je relis, et à celle de l'univers global lorsque le texte appartient à un monde étendu.</p>
+                            <p><strong class="text-violet-dark">Passionnée par l'imaginaire</strong> sous toutes ses formes – livres, jeux vidéo, films, séries –, je veille à la cohérence interne des œuvres que je relis, et à celle de l'univers global lorsque le texte appartient à un monde étendu.</p>
                         </div>
                     </div>
                 </div>
@@ -194,10 +194,7 @@ title: Accueil
                             <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
                             <p><strong class="text-violet-dark">Agences de correction</strong></p>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-2 h-2 bg-violet rounded-full mt-2 flex-shrink-0"></div>
-                            <p><strong class="text-violet-dark">Plateformes d'autoédition</strong></p>
-                        </div>
+
                     </div>
                 </div>
                 
@@ -212,7 +209,7 @@ title: Accueil
                         <div class="flex items-center justify-center w-12 h-12 bg-violet/10 rounded-xl">
                             <i data-lucide="file-edit" class="text-violet w-7 h-7"></i>
                         </div>
-                        Quelles prestations ?
+                        Quelles prestations&nbsp;?
                     </h3>
                     <div class="space-y-4 text-gray-700 leading-relaxed lg:pl-6">
                         <div class="flex items-start gap-3">
@@ -272,7 +269,7 @@ title: Accueil
         
         <div class="text-center mt-12">
             <a href="#contact" class="inline-flex items-center gap-2 bg-violet hover:bg-violet-dark text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                <i data-lucide="calculator" class="w-5 h-5"></i>
+                <i data-lucide="send" class="w-5 h-5"></i>
                 Me contacter
             </a>
         </div>
@@ -286,255 +283,99 @@ title: Accueil
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif text-violet-dark mb-4">Contact</h2>
             <div class="w-24 h-1 bg-violet mx-auto rounded-full mb-6"></div>
             <p class="text-lg sm:text-xl text-violet-dark max-w-2xl mx-auto leading-relaxed">
-                Choisissez votre situation pour un email personnalisé et pré-rempli. Simple et efficace ! ✨
+                Vous souhaitez me confier un projet ? Vous avez des questions ? Parlons-en. 🙂
             </p>
         </div>
         
-        <!-- Formulaire interactif de contact -->
-        <div class="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl border border-violet/10">
-            <div class="space-y-8">
-                <!-- Étape 1: Sélection du type de client -->
-                <div class="space-y-6">
-                    <h3 class="text-xl lg:text-2xl font-serif text-violet-dark text-center">Vous êtes :</h3>
+        <!-- Formulaire de contact simple -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl border border-violet/10 max-w-4xl mx-auto">
+            <div class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Nom et Prénom -->
+                    <div class="form-group">
+                        <label for="nom" class="block text-sm font-medium text-violet-dark mb-2">
+                            <i data-lucide="user" class="w-4 h-4 inline mr-2"></i>
+                            Nom et Prénom *
+                        </label>
+                        <input type="text" id="nom" name="nom" required
+                               class="w-full px-4 py-3 border border-violet/20 rounded-xl focus:ring-2 focus:ring-violet/20 focus:border-violet transition-colors duration-200"
+                               placeholder="Votre nom complet">
+                    </div>
                     
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <button onclick="selectClientType('auteur')" 
-                                class="client-type-btn group relative p-6 bg-violet/5 hover:bg-violet/10 rounded-2xl border-2 border-transparent hover:border-violet/30 transition-all duration-300 text-center"
-                                data-type="auteur">
-                            <div class="flex flex-col items-center space-y-3">
-                                <div class="w-12 h-12 bg-violet/10 group-hover:bg-violet/20 rounded-xl flex items-center justify-center transition-colors duration-300">
-                                    <i data-lucide="pen-tool" class="w-6 h-6 text-violet"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-violet-dark">Auteur</h4>
-                                    <p class="text-sm text-gray-600 mt-1">Manuscrit à corriger</p>
-                                </div>
-                            </div>
-                        </button>
-                        
-                        <button onclick="selectClientType('editeur')" 
-                                class="client-type-btn group relative p-6 bg-violet/5 hover:bg-violet/10 rounded-2xl border-2 border-transparent hover:border-violet/30 transition-all duration-300 text-center"
-                                data-type="editeur">
-                            <div class="flex flex-col items-center space-y-3">
-                                <div class="w-12 h-12 bg-violet/10 group-hover:bg-violet/20 rounded-xl flex items-center justify-center transition-colors duration-300">
-                                    <i data-lucide="building" class="w-6 h-6 text-violet"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-violet-dark">Éditeur</h4>
-                                    <p class="text-sm text-gray-600 mt-1">Maison d'édition</p>
-                                </div>
-                            </div>
-                        </button>
-                        
-                        <button onclick="selectClientType('agence')" 
-                                class="client-type-btn group relative p-6 bg-violet/5 hover:bg-violet/10 rounded-2xl border-2 border-transparent hover:border-violet/30 transition-all duration-300 text-center"
-                                data-type="agence">
-                            <div class="flex flex-col items-center space-y-3">
-                                <div class="w-12 h-12 bg-violet/10 group-hover:bg-violet/20 rounded-xl flex items-center justify-center transition-colors duration-300">
-                                    <i data-lucide="users" class="w-6 h-6 text-violet"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-violet-dark">Agence</h4>
-                                    <p class="text-sm text-gray-600 mt-1">Agence de correction</p>
-                                </div>
-                            </div>
-                        </button>
-                        
-                        <button onclick="selectClientType('autre')" 
-                                class="client-type-btn group relative p-6 bg-violet/5 hover:bg-violet/10 rounded-2xl border-2 border-transparent hover:border-violet/30 transition-all duration-300 text-center"
-                                data-type="autre">
-                            <div class="flex flex-col items-center space-y-3">
-                                <div class="w-12 h-12 bg-violet/10 group-hover:bg-violet/20 rounded-xl flex items-center justify-center transition-colors duration-300">
-                                    <i data-lucide="help-circle" class="w-6 h-6 text-violet"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-violet-dark">Autre</h4>
-                                    <p class="text-sm text-gray-600 mt-1">Plateforme, etc.</p>
-                                </div>
-                            </div>
-                        </button>
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email" class="block text-sm font-medium text-violet-dark mb-2">
+                            <i data-lucide="mail" class="w-4 h-4 inline mr-2"></i>
+                            Email *
+                        </label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-4 py-3 border border-violet/20 rounded-xl focus:ring-2 focus:ring-violet/20 focus:border-violet transition-colors duration-200"
+                               placeholder="votre.email@exemple.com">
                     </div>
                 </div>
                 
-                <!-- Étape 2: Sélection du type de projet (caché initialement) -->
-                <div id="project-type-section" class="space-y-6 hidden">
-                    <h3 class="text-xl lg:text-2xl font-serif text-violet-dark text-center">Type de projet :</h3>
+                <!-- Sujet -->
+                <div class="form-group">
+                    <label for="sujet" class="block text-sm font-medium text-violet-dark mb-2">
+                        <i data-lucide="tag" class="w-4 h-4 inline mr-2"></i>
+                        Sujet *
+                    </label>
+                    <input type="text" id="sujet" name="sujet" required
+                           class="w-full px-4 py-3 border border-violet/20 rounded-xl focus:ring-2 focus:ring-violet/20 focus:border-violet transition-colors duration-200"
+                           placeholder="Objet de votre demande">
+                </div>
+                
+                <!-- Message -->
+                <div class="form-group">
+                    <label for="message" class="block text-sm font-medium text-violet-dark mb-2">
+                        <i data-lucide="message-square" class="w-4 h-4 inline mr-2"></i>
+                        Message *
+                    </label>
+                    <textarea id="message" name="message" rows="6" required
+                              class="w-full px-4 py-3 border border-violet/20 rounded-xl focus:ring-2 focus:ring-violet/20 focus:border-violet transition-colors duration-200 resize-none"
+                              placeholder="Décrivez votre projet, vos besoins, vos questions..."></textarea>
+                </div>
+                
+                <!-- Pièce jointe -->
+                <div class="form-group">
+                    <label for="piece-jointe" class="block text-sm font-medium text-violet-dark mb-2">
+                        <i data-lucide="paperclip" class="w-4 h-4 inline mr-2"></i>
+                        Pièce jointe (optionnel)
+                    </label>
+                    <input type="file" id="piece-jointe" name="piece-jointe"
+                           class="w-full px-4 py-3 border border-violet/20 rounded-xl focus:ring-2 focus:ring-violet/20 focus:border-violet transition-colors duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-violet/10 file:text-violet hover:file:bg-violet/20">
+                    <p class="text-xs text-gray-500 mt-2">Formats acceptés : PDF, DOC, DOCX, TXT (Max 10 Mo)</p>
+                </div>
+                
+                <!-- Bouton d'envoi -->
+                <div class="text-center pt-6">
+                    <button type="button" onclick="sendSimpleEmail()" 
+                            class="inline-flex items-center gap-3 bg-violet hover:bg-violet-dark text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        <span>Envoyer le message</span>
+                    </button>
                     
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <button onclick="selectProjectType('manga')" 
-                                class="project-type-btn group relative p-6 bg-cream/30 hover:bg-cream/50 rounded-2xl border-2 border-transparent hover:border-violet/30 transition-all duration-300 text-center"
-                                data-type="manga">
-                            <div class="flex flex-col items-center space-y-3">
-                                <div class="w-12 h-12 bg-violet/10 group-hover:bg-violet/20 rounded-xl flex items-center justify-center transition-colors duration-300">
-                                    <i data-lucide="message-circle" class="w-6 h-6 text-violet"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-violet-dark">Manga/Webtoon/Comic</h4>
-                                    <p class="text-sm text-gray-600 mt-1">140 € par volume</p>
-                                </div>
-                            </div>
-                        </button>
-                        
-                        <button onclick="selectProjectType('roman')" 
-                                class="project-type-btn group relative p-6 bg-cream/30 hover:bg-cream/50 rounded-2xl border-2 border-transparent hover:border-violet/30 transition-all duration-300 text-center"
-                                data-type="roman">
-                            <div class="flex flex-col items-center space-y-3">
-                                <div class="w-12 h-12 bg-violet/10 group-hover:bg-violet/20 rounded-xl flex items-center justify-center transition-colors duration-300">
-                                    <i data-lucide="book-open" class="w-6 h-6 text-violet"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-violet-dark">Roman</h4>
-                                    <p class="text-sm text-gray-600 mt-1">2,50 € / 1000 signes</p>
-                                </div>
-                            </div>
-                        </button>
-                        
-                        <button onclick="selectProjectType('artbook')" 
-                                class="project-type-btn group relative p-6 bg-cream/30 hover:bg-cream/50 rounded-2xl border-2 border-transparent hover:border-violet/30 transition-all duration-300 text-center"
-                                data-type="artbook">
-                            <div class="flex flex-col items-center space-y-3">
-                                <div class="w-12 h-12 bg-violet/10 group-hover:bg-violet/20 rounded-xl flex items-center justify-center transition-colors duration-300">
-                                    <i data-lucide="image" class="w-6 h-6 text-violet"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-violet-dark">Artbook/BD</h4>
-                                    <p class="text-sm text-gray-600 mt-1">Tarif sur mesure</p>
-                                </div>
-                            </div>
-                        </button>
-                        
-                        <button onclick="selectProjectType('cuisine')" 
-                                class="project-type-btn group relative p-6 bg-cream/30 hover:bg-cream/50 rounded-2xl border-2 border-transparent hover:border-violet/30 transition-all duration-300 text-center"
-                                data-type="cuisine">
-                            <div class="flex flex-col items-center space-y-3">
-                                <div class="w-12 h-12 bg-violet/10 group-hover:bg-violet/20 rounded-xl flex items-center justify-center transition-colors duration-300">
-                                    <i data-lucide="chef-hat" class="w-6 h-6 text-violet"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-violet-dark">Livre de cuisine</h4>
-                                    <p class="text-sm text-gray-600 mt-1">2,50 € / 1000 signes</p>
-                                </div>
-                            </div>
-                        </button>
-                        
-                        <button onclick="selectProjectType('scolaire')" 
-                                class="project-type-btn group relative p-6 bg-cream/30 hover:bg-cream/50 rounded-2xl border-2 border-transparent hover:border-violet/30 transition-all duration-300 text-center"
-                                data-type="scolaire">
-                            <div class="flex flex-col items-center space-y-3">
-                                <div class="w-12 h-12 bg-violet/10 group-hover:bg-violet/20 rounded-xl flex items-center justify-center transition-colors duration-300">
-                                    <i data-lucide="graduation-cap" class="w-6 h-6 text-violet"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-violet-dark">Scolaire/Essai</h4>
-                                    <p class="text-sm text-gray-600 mt-1">2,50 € / 1000 signes</p>
-                                </div>
-                            </div>
-                        </button>
-                        
-                        <button onclick="selectProjectType('autre_projet')" 
-                                class="project-type-btn group relative p-6 bg-cream/30 hover:bg-cream/50 rounded-2xl border-2 border-transparent hover:border-violet/30 transition-all duration-300 text-center"
-                                data-type="autre_projet">
-                            <div class="flex flex-col items-center space-y-3">
-                                <div class="w-12 h-12 bg-violet/10 group-hover:bg-violet/20 rounded-xl flex items-center justify-center transition-colors duration-300">
-                                    <i data-lucide="file-text" class="w-6 h-6 text-violet"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-violet-dark">Autre projet</h4>
-                                    <p class="text-sm text-gray-600 mt-1">Devis personnalisé</p>
-                                </div>
-                            </div>
-                        </button>
+                    <div class="mt-4 flex items-center justify-center gap-2 text-sm text-gray-600">
+                        <i data-lucide="info" class="w-4 h-4"></i>
+                        <span>L'email s'ouvrira dans votre client mail préféré</span>
                     </div>
                 </div>
                 
-                <!-- Étape 3: Formulaire personnalisé (caché initialement) -->
-                <div id="custom-form-section" class="space-y-6 hidden">
-                    <h3 class="text-xl lg:text-2xl font-serif text-violet-dark text-center">Détaillez votre projet :</h3>
-                    
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-4">
-                            <div class="form-group">
-                                <label for="project-details" class="block text-sm font-medium text-violet-dark mb-2">
-                                    <i data-lucide="file-text" class="w-4 h-4 inline mr-2"></i>
-                                    Description du projet
-                                </label>
-                                <textarea id="project-details" rows="4" 
-                                        class="w-full px-4 py-3 border border-violet/20 rounded-xl focus:ring-2 focus:ring-violet/20 focus:border-violet transition-colors duration-200 resize-none"
-                                        placeholder="Décrivez brièvement votre projet..."></textarea>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="timeline" class="block text-sm font-medium text-violet-dark mb-2">
-                                    <i data-lucide="calendar" class="w-4 h-4 inline mr-2"></i>
-                                    Délai souhaité
-                                </label>
-                                <select id="timeline" 
-                                        class="w-full px-4 py-3 border border-violet/20 rounded-xl focus:ring-2 focus:ring-violet/20 focus:border-violet transition-colors duration-200">
-                                    <option value="">Sélectionnez un délai</option>
-                                    <option value="urgent">Urgent (moins d'une semaine)</option>
-                                    <option value="rapide">Rapide (1-2 semaines)</option>
-                                    <option value="normal">Normal (2-4 semaines)</option>
-                                    <option value="flexible">Flexible (plus d'un mois)</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="space-y-4">
-                            <div class="form-group" id="volume-info">
-                                <label for="volume-count" class="block text-sm font-medium text-violet-dark mb-2">
-                                    <i data-lucide="hash" class="w-4 h-4 inline mr-2"></i>
-                                    <span id="volume-label">Nombre de volumes</span>
-                                </label>
-                                <input type="number" id="volume-count" min="1" 
-                                       class="w-full px-4 py-3 border border-violet/20 rounded-xl focus:ring-2 focus:ring-violet/20 focus:border-violet transition-colors duration-200"
-                                       placeholder="Ex: 3">
-                            </div>
-                            
-                            <div class="form-group" id="additional-info">
-                                <label for="additional-details" class="block text-sm font-medium text-violet-dark mb-2">
-                                    <i data-lucide="plus-circle" class="w-4 h-4 inline mr-2"></i>
-                                    Informations complémentaires
-                                </label>
-                                <textarea id="additional-details" rows="3" 
-                                        class="w-full px-4 py-3 border border-violet/20 rounded-xl focus:ring-2 focus:ring-violet/20 focus:border-violet transition-colors duration-200 resize-none"
-                                        placeholder="Toute information utile (format, contraintes particulières, etc.)"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Estimation de prix dynamique -->
-                    <div id="price-estimate" class="bg-violet/5 rounded-2xl p-6 border border-violet/10 hidden">
-                        <div class="flex items-center gap-3 mb-3">
-                            <i data-lucide="calculator" class="w-6 h-6 text-violet"></i>
-                            <h4 class="text-lg font-semibold text-violet-dark">Estimation indicative</h4>
-                        </div>
-                        <p id="price-text" class="text-violet-dark text-lg"></p>
-                        <p class="text-sm text-gray-600 mt-2">Cette estimation peut être ajustée selon les spécificités de votre projet.</p>
-                    </div>
-                    
-                    <!-- Bouton d'envoi de l'email -->
-                    <div class="text-center pt-6">
-                        <button onclick="generateEmail()" 
-                                class="inline-flex items-center gap-3 bg-violet hover:bg-violet-dark text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                            <i data-lucide="send" class="w-5 h-5"></i>
-                            <span>Envoyer l'email personnalisé</span>
-                        </button>
-                        
-                        <div class="mt-4 flex items-center justify-center gap-2 text-sm text-gray-600">
-                            <i data-lucide="info" class="w-4 h-4"></i>
-                            <span>L'email s'ouvrira dans votre client mail préféré</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Message de contact direct -->
+                <!-- Contact direct -->
                 <div class="text-center pt-8 border-t border-gray-200">
                     <p class="text-gray-600 mb-4">Ou contactez-moi directement :</p>
-                    <a href="mailto:violette.pogoda@gmail.com" 
-                       class="inline-flex items-center gap-2 text-violet hover:text-violet-dark font-medium transition-colors duration-200">
-                        <i data-lucide="mail" class="w-4 h-4"></i>
-                        <span>violette.pogoda@gmail.com</span>
-                    </a>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="mailto:violette.pogoda@gmail.com" 
+                           class="inline-flex items-center gap-2 text-violet hover:text-violet-dark font-medium transition-colors duration-200">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span>violette.pogoda@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/v-pgd/" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 text-violet hover:text-violet-dark font-medium transition-colors duration-200">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -601,229 +442,35 @@ title: Accueil
         }
     }
     
-    /* Styles pour le formulaire de contact interactif */
-    .client-type-btn.selected,
-    .project-type-btn.selected {
-        background: rgba(139, 92, 246, 0.1);
-        border-color: rgba(139, 92, 246, 0.5);
-        transform: scale(1.02);
-    }
-    
-    .client-type-btn.selected .w-12,
-    .project-type-btn.selected .w-12 {
-        background: rgba(139, 92, 246, 0.2);
-    }
-    
-    /* Animation des sections qui apparaissent */
-    .slide-in {
-        animation: slideInDown 0.5s ease-out;
-    }
-    
-    @keyframes slideInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    /* Amélioration du responsive pour le formulaire */
-    @media (max-width: 640px) {
-        .grid.sm\\:grid-cols-2.lg\\:grid-cols-4 {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        
-        .grid.sm\\:grid-cols-2.lg\\:grid-cols-3 {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
+
 </style>
 
 <script>
-    let selectedClientType = '';
-    let selectedProjectType = '';
-    
-    function selectClientType(type) {
-        selectedClientType = type;
+    function sendSimpleEmail() {
+        const nom = document.getElementById('nom').value;
+        const email = document.getElementById('email').value;
+        const sujet = document.getElementById('sujet').value;
+        const message = document.getElementById('message').value;
         
-        // Mise à jour visuelle des boutons
-        document.querySelectorAll('.client-type-btn').forEach(btn => {
-            btn.classList.remove('selected');
-        });
-        document.querySelector(`[data-type="${type}"]`).classList.add('selected');
-        
-        // Affichage de la section suivante
-        const projectSection = document.getElementById('project-type-section');
-        projectSection.classList.remove('hidden');
-        projectSection.classList.add('slide-in');
-        
-        // Scroll doux vers la section suivante
-        setTimeout(() => {
-            projectSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 200);
-    }
-    
-    function selectProjectType(type) {
-        selectedProjectType = type;
-        
-        // Mise à jour visuelle des boutons
-        document.querySelectorAll('.project-type-btn').forEach(btn => {
-            btn.classList.remove('selected');
-        });
-        document.querySelector(`[data-type="${type}"]`).classList.add('selected');
-        
-        // Personnalisation du formulaire selon le type de projet
-        customizeForm(type);
-        
-        // Affichage de la section formulaire
-        const formSection = document.getElementById('custom-form-section');
-        formSection.classList.remove('hidden');
-        formSection.classList.add('slide-in');
-        
-        // Scroll doux vers la section suivante
-        setTimeout(() => {
-            formSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 200);
-    }
-    
-    function customizeForm(projectType) {
-        const volumeLabel = document.getElementById('volume-label');
-        const volumeCount = document.getElementById('volume-count');
-        const priceEstimate = document.getElementById('price-estimate');
-        
-        // Personnalisation selon le type de projet
-        switch(projectType) {
-            case 'manga':
-                volumeLabel.textContent = 'Nombre de volumes';
-                volumeCount.placeholder = 'Ex: 3';
-                volumeCount.addEventListener('input', calculateMangaPrice);
-                break;
-            case 'roman':
-            case 'cuisine':
-            case 'scolaire':
-                volumeLabel.textContent = 'Nombre de signes (approximatif)';
-                volumeCount.placeholder = 'Ex: 150000';
-                volumeCount.addEventListener('input', calculateBookPrice);
-                break;
-            case 'artbook':
-                volumeLabel.textContent = 'Nombre de pages';
-                volumeCount.placeholder = 'Ex: 120';
-                volumeCount.addEventListener('input', showCustomQuote);
-                break;
-            default:
-                volumeLabel.textContent = 'Quantité';
-                volumeCount.placeholder = 'À préciser';
-                volumeCount.addEventListener('input', showCustomQuote);
+        // Vérification des champs obligatoires
+        if (!nom || !email || !sujet || !message) {
+            alert('Veuillez remplir tous les champs obligatoires.');
+            return;
         }
-    }
-    
-    function calculateMangaPrice() {
-        const count = parseInt(document.getElementById('volume-count').value) || 0;
-        const priceEstimate = document.getElementById('price-estimate');
-        const priceText = document.getElementById('price-text');
-        
-        if (count > 0) {
-            const total = count * 140;
-            priceText.textContent = `Estimation : ${total} € pour ${count} volume${count > 1 ? 's' : ''}`;
-            priceEstimate.classList.remove('hidden');
-        } else {
-            priceEstimate.classList.add('hidden');
-        }
-    }
-    
-    function calculateBookPrice() {
-        const count = parseInt(document.getElementById('volume-count').value) || 0;
-        const priceEstimate = document.getElementById('price-estimate');
-        const priceText = document.getElementById('price-text');
-        
-        if (count > 0) {
-            const total = Math.round((count / 1000) * 2.5);
-            priceText.textContent = `Estimation : ${total} € pour ${count.toLocaleString()} signes`;
-            priceEstimate.classList.remove('hidden');
-        } else {
-            priceEstimate.classList.add('hidden');
-        }
-    }
-    
-    function showCustomQuote() {
-        const priceEstimate = document.getElementById('price-estimate');
-        const priceText = document.getElementById('price-text');
-        
-        priceText.textContent = 'Devis personnalisé selon les spécificités du projet';
-        priceEstimate.classList.remove('hidden');
-    }
-    
-    function generateEmail() {
-        const projectDetails = document.getElementById('project-details').value;
-        const timeline = document.getElementById('timeline').value;
-        const volumeCount = document.getElementById('volume-count').value;
-        const additionalDetails = document.getElementById('additional-details').value;
-        
-        // Construction du sujet
-        const subjects = {
-            'auteur': 'Demande de correction - Auteur',
-            'editeur': 'Demande de collaboration - Maison d\'édition',
-            'agence': 'Demande de partenariat - Agence de correction',
-            'autre': 'Demande de devis - Vio-lettres'
-        };
-        
-        const projectNames = {
-            'manga': 'Manga/Webtoon/Comic',
-            'roman': 'Roman',
-            'artbook': 'Artbook/BD',
-            'cuisine': 'Livre de cuisine',
-            'scolaire': 'Ouvrage scolaire/Essai',
-            'autre_projet': 'Projet spécifique'
-        };
-        
-        const timelineTexts = {
-            'urgent': 'Urgent (moins d\'une semaine)',
-            'rapide': 'Rapide (1-2 semaines)',
-            'normal': 'Normal (2-4 semaines)',
-            'flexible': 'Flexible (plus d\'un mois)'
-        };
         
         // Construction du corps de l'email
         let body = `Bonjour Violette,\n\n`;
-        body += `Je vous contacte en tant que ${selectedClientType} pour un projet de correction.\n\n`;
-        body += `📚 TYPE DE PROJET :\n`;
-        body += `${projectNames[selectedProjectType] || 'Projet à définir'}\n\n`;
-        
-        if (volumeCount) {
-            const volumeLabel = selectedProjectType === 'manga' ? 'volumes' : 
-                               selectedProjectType === 'artbook' ? 'pages' : 'signes';
-            body += `📊 QUANTITÉ :\n`;
-            body += `${volumeCount} ${volumeLabel}\n\n`;
-        }
-        
-        if (timeline) {
-            body += `⏰ DÉLAI SOUHAITÉ :\n`;
-            body += `${timelineTexts[timeline]}\n\n`;
-        }
-        
-        if (projectDetails) {
-            body += `📝 DESCRIPTION DU PROJET :\n`;
-            body += `${projectDetails}\n\n`;
-        }
-        
-        if (additionalDetails) {
-            body += `ℹ️ INFORMATIONS COMPLÉMENTAIRES :\n`;
-            body += `${additionalDetails}\n\n`;
-        }
-        
-        body += `J'aimerais discuter de ce projet avec vous et obtenir un devis.\n\n`;
-        body += `Merci pour votre attention et votre professionnalisme.\n\n`;
-        body += `Cordialement`;
+        body += `${message}\n\n`;
+        body += `Cordialement,\n`;
+        body += `${nom}\n`;
+        body += `${email}`;
         
         // Encodage pour URL
-        const subject = encodeURIComponent(subjects[selectedClientType]);
+        const encodedSubject = encodeURIComponent(sujet);
         const encodedBody = encodeURIComponent(body);
         
         // Génération du lien mailto
-        const mailtoLink = `mailto:violette.pogoda@gmail.com?subject=${subject}&body=${encodedBody}`;
+        const mailtoLink = `mailto:violette.pogoda@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
         
         // Ouverture du client mail
         window.location.href = mailtoLink;
