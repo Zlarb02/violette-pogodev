@@ -951,24 +951,65 @@ title: Accueil
             submitButton.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin" aria-hidden="true"></i><span>Envoi en cours...</span>';
             
             try {
-                // Construction du corps de l'email avec meilleur formatage
-                let body = `Bonjour Violette,\n\n`;
-                body += `${message}\n\n`;
-                body += `---\n`;
-                body += `Message envoyé depuis votre site web\n`;
-                body += `Nom : ${nom}\n`;
-                body += `Email : ${email}\n`;
-                body += `Date : ${new Date().toLocaleDateString('fr-FR')}`;
+                // Construction du corps de l'email avec formatage robuste
+                const separator = '\r\n';  // CRLF pour compatibilité maximale
+                const doubleSeparator = '\r\n\r\n';
                 
-                // Encodage pour URL
-                const encodedSubject = encodeURIComponent(`[Site Web] ${sujet}`);
-                const encodedBody = encodeURIComponent(body);
+                let body = '';
+                body += 'Bonjour Violette,';
+                body += doubleSeparator;
+                body += message;
+                body += doubleSeparator;
+                body += '---';
+                body += separator;
+                body += 'Message envoyé depuis votre site web';
+                body += separator;
+                body += 'Nom : ' + nom;
+                body += separator;
+                body += 'Email : ' + email;
+                body += separator;
+                body += 'Date : ' + new Date().toLocaleDateString('fr-FR');
                 
-                // Génération du lien mailto
+                // Encodage optimisé pour mailto
+                const encodedSubject = encodeURIComponent('[Site Web] ' + sujet);
+                
+                // Préparation spéciale du body pour mailto - certains clients sont sensibles
+                let cleanBody = body
+                    .replace(/\r\n/g, '\n')  // Normaliser d'abord
+                    .replace(/\n/g, '%0A');   // Encoder comme LF simple
+                    
+                const encodedBody = encodeURIComponent(body.replace(/\r\n/g, '\n'));
+                
+                // Génération du lien mailto avec gestion d'erreur
                 const mailtoLink = `mailto:violette.pogoda@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
                 
-                // Ouverture du client mail
-                window.location.href = mailtoLink;
+                // Méthode alternative plus robuste pour créer le lien mailto
+                try {
+                    // Tentative avec la version complète
+                    if (mailtoLink.length > 2000) {
+                        throw new Error('Email trop long');
+                    }
+                    
+                    // Test d'ouverture - certains navigateurs peuvent échouer
+                    const testLink = document.createElement('a');
+                    testLink.href = mailtoLink;
+                    testLink.click();
+                    
+                } catch (error) {
+                    // Fallback : version simplifiée
+                    console.log('Utilisation du fallback email court');
+                    const fallbackBody = [
+                        'Bonjour Violette,',
+                        '',
+                        message,
+                        '',
+                        'Cordialement,',
+                        nom + ' (' + email + ')'
+                    ].join('\n');
+                    
+                    const fallbackMailto = `mailto:violette.pogoda@gmail.com?subject=${encodedSubject}&body=${encodeURIComponent(fallbackBody)}`;
+                    window.location.href = fallbackMailto;
+                }
                 
                 // Message de succès pour l'utilisateur
                 setTimeout(() => {
