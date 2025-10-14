@@ -1329,22 +1329,19 @@
             const sujet = document.getElementById('sujet').value.trim();
             const message = document.getElementById('message').value.trim();
             
-            // Validation complète
-            let isFormValid = true;
-            ['nom', 'email', 'sujet', 'message'].forEach(fieldName => {
-                const field = document.getElementById(fieldName);
-                const errorElementId = fieldName + '-error';
-                const isValid = validateField(field, errorElementId, validators[fieldName], errorMessages[fieldName]);
-                if (!isValid) isFormValid = false;
-            });
+            // Validation simple des champs obligatoires
+            if (!nom.trim() || !email.trim() || !sujet.trim() || !message.trim()) {
+                alert('Veuillez remplir tous les champs obligatoires.');
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i data-lucide="send" class="w-5 h-5" aria-hidden="true"></i><span>Envoyer le message</span>';
+                return;
+            }
             
-            if (!isFormValid) {
-                // Donner le focus au premier champ invalide
-                const firstInvalidField = form.querySelector('[aria-invalid="true"]');
-                if (firstInvalidField) {
-                    firstInvalidField.focus();
-                    firstInvalidField.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
+            // Validation email simple
+            if (!email.includes('@') || !email.includes('.')) {
+                alert('Veuillez entrer une adresse email valide.');
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i data-lucide="send" class="w-5 h-5" aria-hidden="true"></i><span>Envoyer le message</span>';
                 return;
             }
             
@@ -1353,93 +1350,71 @@
             submitButton.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin" aria-hidden="true"></i><span>Envoi en cours...</span>';
             
             try {
-                // Construction du corps de l'email avec formatage robuste
-                const separator = '\r\n';  // CRLF pour compatibilité maximale
-                const doubleSeparator = '\r\n\r\n';
-                
-                let body = '';
-                body += 'Bonjour Violette,';
-                body += doubleSeparator;
-                body += message;
-                body += doubleSeparator;
-                body += '---';
-                body += separator;
-                body += 'Message envoyé depuis votre site web';
-                body += separator;
-                body += 'Nom : ' + nom;
-                body += separator;
-                body += 'Email : ' + email;
-                body += separator;
+                // Construction simple du corps de l'email
+                let body = 'Bonjour Violette,\n\n';
+                body += message + '\n\n';
+                body += '---\n';
+                body += 'Message envoyé depuis votre site web\n';
+                body += 'Nom : ' + nom + '\n';
+                body += 'Email : ' + email + '\n';
                 body += 'Date : ' + new Date().toLocaleDateString('fr-FR');
                 
-                // Encodage optimisé pour mailto
+                // Encodage simple et efficace
                 const encodedSubject = encodeURIComponent('[Site Web] ' + sujet);
+                const encodedBody = encodeURIComponent(body);
                 
-                // Préparation spéciale du body pour mailto - certains clients sont sensibles
-                let cleanBody = body
-                    .replace(/\r\n/g, '\n')  // Normaliser d'abord
-                    .replace(/\n/g, '%0A');   // Encoder comme LF simple
-                    
-                const encodedBody = encodeURIComponent(body.replace(/\r\n/g, '\n'));
+                // Création du lien mailto
+                const mailtoLink = 'mailto:violette.pogoda@gmail.com?subject=' + encodedSubject + '&body=' + encodedBody;
                 
-                // Génération du lien mailto avec gestion d'erreur
-                const mailtoLink = `mailto:violette.pogoda@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
-                
-                // Méthode alternative plus robuste pour créer le lien mailto
+                // Essayer plusieurs méthodes pour forcer l'ouverture du client mail
                 try {
-                    // Tentative avec la version complète
-                    if (mailtoLink.length > 2000) {
-                        throw new Error('Email trop long');
+                    // Méthode 1 : window.open (souvent plus efficace pour mailto)
+                    const newWindow = window.open(mailtoLink, '_blank');
+                    
+                    // Si la fenêtre s'ouvre mais reste vide, la fermer après un délai
+                    if (newWindow) {
+                        setTimeout(() => {
+                            try {
+                                newWindow.close();
+                            } catch (e) {
+                                // Ignore les erreurs de fermeture
+                            }
+                        }, 500);
                     }
-                    
-                    // Test d'ouverture - certains navigateurs peuvent échouer
-                    const testLink = document.createElement('a');
-                    testLink.href = mailtoLink;
-                    testLink.click();
-                    
-                } catch (error) {
-                    // Fallback : version simplifiée
-                    console.log('Utilisation du fallback email court');
-                    const fallbackBody = [
-                        'Bonjour Violette,',
-                        '',
-                        message,
-                        '',
-                        'Cordialement,',
-                        nom + ' (' + email + ')'
-                    ].join('\n');
-                    
-                    const fallbackMailto = `mailto:violette.pogoda@gmail.com?subject=${encodedSubject}&body=${encodeURIComponent(fallbackBody)}`;
-                    window.location.href = fallbackMailto;
+                } catch (e) {
+                    // Fallback : méthode classique
+                    window.location.href = mailtoLink;
                 }
                 
-                // Message de succès pour l'utilisateur
+                
+                // Afficher un message de confirmation à l'utilisateur
                 setTimeout(() => {
-                    const successMessage = document.createElement('div');
-                    successMessage.className = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl mb-4';
-                    successMessage.setAttribute('role', 'alert');
-                    successMessage.innerHTML = '<strong>Succès !</strong> Votre client mail devrait s\'ouvrir avec le message pré-rempli.';
-                    form.insertBefore(successMessage, form.firstChild);
+                    const confirmMessage = document.createElement('div');
+                    confirmMessage.className = 'bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded-xl mb-4';
+                    confirmMessage.setAttribute('role', 'alert');
+                    confirmMessage.innerHTML = `
+                        <strong>Client mail en cours d'ouverture...</strong><br>
+                        Si votre client mail ne s'ouvre pas, vous pouvez copier cette adresse : 
+                        <strong>violette.pogoda@gmail.com</strong><br>
+                        <small>Sujet : [Site Web] ${sujet}</small>
+                    `;
+                    form.insertBefore(confirmMessage, form.firstChild);
                     
-                    // Supprimer le message après 5 secondes
-                    setTimeout(() => successMessage.remove(), 5000);
-                }, 1000);
+                    // Supprimer le message après 10 secondes
+                    setTimeout(() => confirmMessage.remove(), 10000);
+                }, 100);
                 
             } catch (error) {
                 console.error('Erreur lors de l\'envoi:', error);
-                const errorMessage = document.createElement('div');
-                errorMessage.className = 'bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-xl mb-4';
-                errorMessage.setAttribute('role', 'alert');
-                errorMessage.innerHTML = '<strong>Erreur !</strong> Une erreur est survenue. Veuillez réessayer ou me contacter directement.';
-                form.insertBefore(errorMessage, form.firstChild);
-            } finally {
-                // Réactiver le bouton
-                setTimeout(() => {
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = '<i data-lucide="send" class="w-5 h-5" aria-hidden="true"></i><span>Envoyer le message</span>';
-                    lucide.createIcons(); // Recréer les icônes
-                }, 2000);
+                alert('Erreur : Veuillez contacter directement violette.pogoda@gmail.com avec le sujet : [Site Web] ' + sujet);
             }
+            
+            // Réactiver le bouton après un court délai
+            setTimeout(() => {
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i data-lucide="send" class="w-5 h-5" aria-hidden="true"></i><span>Envoyer le message</span>';
+                lucide.createIcons(); // Recréer les icônes
+            }, 1000);
         });
     });
 </script>
